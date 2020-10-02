@@ -19,7 +19,7 @@ def topLevel():
     """
     tempo = 0
 
-    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 1, 2, 5, 9, 5, 5 
+    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 0, 2, 2, 2, 2, 0 
     timeofday = {True: 'am', False:'pm'}
     ampm = True
 
