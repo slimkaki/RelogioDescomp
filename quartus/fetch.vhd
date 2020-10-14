@@ -6,19 +6,14 @@ entity fetch is
 
 	generic (
 		dataWidth: natural := 11;
-        addrWidth: natural := 10
+		addrWidth: natural := 10
 	);
 
 	port (
-
 		selMux : in std_logic;
-
 		CLOCK_50 : in std_logic;
-
-		inBmux : in std_logic_vector(addrWidth-1 DOWNTO 0);
-
+		endROM : in std_logic_vector(addrWidth-1 DOWNTO 0);
 		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0)
-
 	);
 
 end entity;
@@ -31,7 +26,7 @@ architecture arch_name OF fetch is
 		MUX : entity work.muxGenerico2x1 
 			generic map ( larguraDados => addrWidth )
 			port map (entradaA_MUX => somadorOut, 
-					  entradaB_Mux => inBmux, 
+					  entradaB_Mux => endROM, 
 					  seletor_MUX => '1', 
 					  saida_MUX => muxOut);
 		

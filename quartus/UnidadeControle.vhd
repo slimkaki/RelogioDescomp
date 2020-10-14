@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY Unidade_Controle IS
+ENTITY UnidadeControle IS
     GENERIC (
         DATA_WIDTH : NATURAL := 8;
         ADDR_WIDTH : NATURAL := 8
@@ -10,29 +10,48 @@ ENTITY Unidade_Controle IS
 
     PORT (
         -- Input ports
-        clk : IN std_logic;
-        opCode : IN std_logic_vector(3 DOWNTO 0);
+        CLOCK_50        :  in  std_logic;
+        opCode          :  in  std_logic_vector(3 DOWNTO 0);
 
-        -- Output ports
-        palavraControle : OUT std_logic_vector(7 DOWNTO 0)
+        flagZero        :  in  std_logic;
+        flagL           :  in  std_logic;
+
+        palavraControle :  out std_logic_vector(8 downto 0)
     );
-END ENTITY;
-ARCHITECTURE arch_name OF Unidade_Controle IS
-    ALIAS selMuxProxPC : std_logic IS palavraControle(7);
-    -- alias selMuxULAImed        : std_logic is palavraControle(6);
-    -- alias HabEscritaAcumulador : std_logic is palavraControle(5);
-    -- alias selOperacaoULA : std_logic_vector(2 downto 0) is palavraControle(4 downto 2);
-    -- alias habLeituraMEM : std_logic is palavraControle(1);
-    -- alias habEscritaMEM : std_logic is palavraControle(0);
 
-    BEGIN
-        -- je  : 0100
+END ENTITY;
+ARCHITECTURE comportamento OF UnidadeControle IS
+
+    alias selMuxJump           : std_logic IS palavraControle(7);
+    alias selMuxULAImed        : std_logic is palavraControle(6);
+    alias habEscritaReg        : std_logic is palavraControle(5);
+    alias selOperacaoULA       : std_logic_vector(2 downto 0) is palavraControle(4 downto 2);
+    alias habLeituraMEM        : std_logic is palavraControle(1);
         -- jl  : 0101
         -- jle : 0110
         -- jmp : 0111
-        selMuxProxPC <= '1' WHEN opCode = "0101" OR opCode = "0100" OR opCode = "0110" OR opCode = "0111" else '0'; -- instruções de jump
-            -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
-            -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
-            --        port map (dataIN => dataIN, dataOUT =>  RegAmuxA, enable =>  habRegA, clk =>  clk, rst => rst);
+    begin
+        process (CLOCK_50) is
+            begin
+            if (opCode = add) then
+                selOperacaoULA <= soma;
+            elsif (opCode = sub or opCode = je or opCode = jl or opCode = jle) then
+                selOperacaoULA <= subtracao;
+            elsif (opCode = mov) then
+                selOperacaoULA <= entradaA;
+            else 
+                selOperacaoULA <= "000";
+            end if;
 
-END ARCHITECTURE;
+        end process;
+        
+        selMuxJump              <= '1' WHEN opCode = je or opCode = jl or opCode = jle or opCode = jmp else '0'; -- instruções de ativação do MUX Jump
+        selMuxULAImed           <= '1' WHEN opCode = mov or opCode = add or opCode = sub or opCode = inc or opCode = je or opCode = jl or opCode = jle else '0' ;-- Para inst        anciar, a atribuição 
+        selMuxImed              <= '1' WHEN opCode = lea else '0';
+        habEscritaReg           <= '1' WHEN opCode = lea or opCode = mov or opCode = add or opCode = sub or opCode = inc else '0';
+        
+        HabLeituraMemoria       <= '1' WHEN opCode = ;
+        HabEscritaMemoria       <= '1' WHEN opCode = ;
+            -- de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
+
+end architecture;
