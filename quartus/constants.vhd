@@ -51,7 +51,7 @@ package constants is
     constant subtracao :  operacaoULA_t := "001";
     constant entradaA  :  operacaoULA_t := "010";
     constant entradaB  :  operacaoULA_t := "011";
-    constant op_xor    :  operacaoULA_t := "100";
+    constant increment :  operacaoULA_t := "100";
     constant op_not    :  operacaoULA_t := "101";
     constant op_and    :  operacaoULA_t := "110";
     constant op_or     :  operacaoULA_t := "111";

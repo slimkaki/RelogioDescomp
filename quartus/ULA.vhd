@@ -26,24 +26,26 @@ architecture comportamento of ULA is
 	 signal op_or: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 signal op_xor: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 signal op_not: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	 signal increment: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 
     begin
 		soma 		<= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
-		subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
+		subtracao   <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		op_and		<= entradaA and entradaB;
 		op_or		<= entradaA or entradaB;
-		op_xor		<= entradaA xor entradaB;
 		op_not		<= not entradaA;
+		increment   <= STD_LOGIC_VECTOR(unsigned(entradaA) + "00000001");
+		-- op_xor		<= entradaA xor entradaB;
 
 
 		saida <=  soma when (seletor = "000") else
 			 subtracao when (seletor = "001") else
-			 entradaA when  (seletor = "010") else
-			 entradaB when  (seletor = "011") else
-			 op_xor when    (seletor = "100") else
-			 op_not when    (seletor = "101") else
-			 op_and when    (seletor = "110") else
-			 op_or when     (seletor = "111") else
+			 entradaA  when (seletor = "010") else
+			 entradaB  when (seletor = "011") else
+			 increment when (seletor = "100") else
+			 op_not    when (seletor = "101") else
+			 op_and    when (seletor = "110") else
+			 op_or     when (seletor = "111") else
 			 entradaA;      -- outra opcao: saida = entradaA
 	  
 	  
