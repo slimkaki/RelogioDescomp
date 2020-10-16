@@ -1,15 +1,15 @@
 # Processador Relógio
 
-## Design de Computadores - Engenharia da Computação
-## Insper - 6° Semestre - 2020.2
+**Design de Computadores - Engenharia da Computação**
+**Insper - 6° Semestre - 2020.2**
 
-# Integrantes do grupo:
+**Integrantes do grupo:**
   
   - José Hélio Paiva Neto
   - Pedro Vero Fontes
   - Rafael Alves de Mello Almada
  
-___
+**Professor:** Paulo Carlos Santos
 
 ## Objetivo
 
