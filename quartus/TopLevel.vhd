@@ -17,57 +17,25 @@ architecture funcionamento of TopLevel is
     signal barramentoDadosSaida   : std_logic_vector(9 downto 0);
     signal barramentoEndSaida     : std_logic_vector(9 downto 0);
 
-    signal negativo, overflow, apaga : std_logic := '0'; -- Não precisaremos de sinal negativo ou overflow
-    signal saidaHex0, saidaHex1, saidaHex2 : std_logic_vector(6 downto 0);
-    signal saidaHex3, saidaHex4, saidaHex5 : std_logic_vector(6 downto 0);
+    signal tic_tac : std_logic;
     begin
         -- CPU
         Processador : entity work.CPU port map(barramentoDadosEntrada => barramentoDadosEntrada,
                                                barramentoDadosSaida   => barramentoDadosSaida,
                                                barramentoEndSaida     => barramentoEndSaida);
 
-        -- Periféricos 
-        -- Desenha saída no Hex de 7 segmentos
-        showHEX0 : entity work.conversorHex7seg port map(dadoHex => sinalLocal, -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex0);   -- 
-        HEX0 <= saidaHex0;
+        -- Base de Tempo
+        -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
+        TICTAC :  entity work.divisorGenerico generic map (divisor => 50000000)   -- divide por 10.
+                                           port map (clk => CLOCK_50, saida_clk => tic_tac);
 
-        showHEX1 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex1);  
-        HEX1 <= saidaHex1;
 
-        showHEX2 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex2);
-        HEX2 <= saidaHex2;
-
-        showHEX3 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex3);
-        HEX3 <= saidaHex3;
-
-        showHEX4 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex4);
-        HEX4 <= saidaHex4;
-
-        showHEX5 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                    apaga  => apaga,          -- apaga => '0'
-                                                    negativo => negativo,     -- negativo => '0'
-                                                    overFlow =>  overflow,    -- overFlow => '0'
-                                                    saida7seg => saidaHex5);
-        HEX5 <= saidaHex5;
+        -- Periféricos
+        IO : entity work.IO_TIMER port map (clk => CLOCK_50,
+                                            HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, 
+                                            HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5,
+                                            SW => SW,
+                                            KEY => KEY);
+        
         
 end architecture;
