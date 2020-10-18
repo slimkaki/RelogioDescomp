@@ -37,7 +37,7 @@ begin
     process(CLOCK_50) is
     begin
         if (rising_edge(CLOCK_50)) then
-            if (escreveC = '1') then
+            if (escreveA = '1') then
                 registrador(to_integer(unsigned(enderecoA))) := dadoEscritaA;
             end if;
         end if;

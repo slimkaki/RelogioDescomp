@@ -20,7 +20,7 @@ end entity;
 
 architecture funcionamento of fluxo_de_dados is
     SIGNAL instruc : STD_LOGIC_VECTOR(25 downto 0);
-    SIGNAL flagZero, flagL : STD_LOGIC := '0'; 
+    --SIGNAL flagZero, flagL : STD_LOGIC := '0'; 
     SIGNAL Mux1Out, Mux2Out, ULAout, dadoRC, dadoRB : STD_LOGIC_VECTOR(9 downto 0); -- saida fetch
 
     alias selMuxJump           : std_logic is palavraControle(8);

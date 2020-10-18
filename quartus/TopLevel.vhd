@@ -13,6 +13,9 @@ entity TopLevel is
 end entity;
 
 architecture funcionamento of TopLevel is
+
+    signal 7segInput0, 7segInput1, 7segInput2, 7segInput3, 7segInput4, 7segInput5 : std_logic_vector(3 downto 0);
+
     signal barramentoDadosEntrada : std_logic_vector(9 downto 0);
     signal barramentoDadosSaida   : std_logic_vector(9 downto 0);
     signal barramentoEndSaida     : std_logic_vector(9 downto 0);
@@ -38,21 +41,23 @@ architecture funcionamento of TopLevel is
 
 
         -- Periféricos
-        IO : entity work.IO_TIMER port map (clk => CLOCK_50,
-                                            HEX0 => HEX0, 
-                                            HEX1 => HEX1, 
-                                            HEX2 => HEX2, 
-                                            HEX3 => HEX3, 
-                                            HEX4 => HEX4, 
-                                            HEX5 => HEX5,
-                                            SW_Hab => hab_sw,
-                                            KEY_Hab => hab_key);
+        -- IO : entity work.IO_TIMER port map (clk  => CLOCK_50,
+        --                                     HEX0 => HEX0, 
+        --                                     HEX1 => HEX1, 
+        --                                     HEX2 => HEX2, 
+        --                                     HEX3 => HEX3, 
+        --                                     HEX4 => HEX4, 
+        --                                     HEX5 => HEX5);
+
+        showHEX0 : entity work.conversorHex7seg port map(dadoHex => 7segInput0, saida7seg => HEX0); 
+        
 
         DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
                                                      habilitaHex => habilitaHex);
 
-        SEGU : entity work.registradorGenerico port map (DIN     => barramentoDadosSaida(3 downto 0),
-                                                         DOUT    => HEX0,
+        SEGU : entity work.registradorGenerico generic map (larguraDados => 4) 
+                                               port map (DIN     => barramentoDadosSaida(3 downto 0),
+                                                         DOUT    => 7segInput0,
                                                          ENABLE  => habilitaHex(0),
                                                          CLK     => CLOCK_50,
                                                          RST     => '0');

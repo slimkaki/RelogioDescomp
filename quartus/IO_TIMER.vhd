@@ -15,10 +15,11 @@ entity IO_TIMER is
 		 );
 	port(	
         clk: in std_logic;
-        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: IN STD_LOGIC_VECTOR(6 downto 0);
-        SW_Hab : IN STD_LOGIC_VECTOR(4 downto 0);
+        barramento : in std_logic_vector();
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: IN STD_LOGIC_VECTOR(3 downto 0)
+        -- SW_Hab : IN STD_LOGIC_VECTOR(4 downto 0);
         -- BOTOES
-        KEY_Hab: IN STD_LOGIC_VECTOR(3 DOWNTO 0)
+        -- KEY_Hab: IN STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 
 end IO_TIMER;
@@ -37,50 +38,47 @@ architecture comportamento of IO_TIMER is
 
         
         
-        --  |  HEX5  |  HEX4  |   HEX3   |   HEX2   |    HEX1   |    HEX0   | --
+        -- |  HEX5  |  HEX4  |   HEX3   |   HEX2   |    HEX1   |    HEX0   | --
         -- | HorasD | HorasU | MinutosD | MinutosU | SegundosD | SegundosU | --
 
-        showHEX0 : entity work.conversorHex7seg port map(dadoHex => sinalLocal, -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex0);   -- 
-        HEX0 <= saidaHex0;
+  -- 
+        
 
-        showHEX1 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex1);  
-        HEX1 <= saidaHex1;
+        -- showHEX1 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
+        --                                                  apaga  => apaga,          -- apaga => '0'
+        --                                                  negativo => negativo,     -- negativo => '0'
+        --                                                  overFlow =>  overflow,    -- overFlow => '0'
+        --                                                  saida7seg => saidaHex1);  
+        
 
-        showHEX2 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex2);
-        HEX2 <= saidaHex2;
+        -- showHEX2 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
+        --                                                  apaga  => apaga,          -- apaga => '0'
+        --                                                  negativo => negativo,     -- negativo => '0'
+        --                                                  overFlow =>  overflow,    -- overFlow => '0'
+        --                                                  saida7seg => saidaHex2);
+        
 
-        showHEX3 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex3);
-        HEX3 <= saidaHex3;
+        -- showHEX3 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
+        --                                                  apaga  => apaga,          -- apaga => '0'
+        --                                                  negativo => negativo,     -- negativo => '0'
+        --                                                  overFlow =>  overflow,    -- overFlow => '0'
+        --                                                  saida7seg => saidaHex3);
+        
 
-        showHEX4 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex4);
-        HEX4 <= saidaHex4;
+        -- showHEX4 : entity work.conversorHex7seg generic map()
+        --                                         port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
+        --                                                  apaga  => apaga,          -- apaga => '0'
+        --                                                  negativo => negativo,     -- negativo => '0'
+        --                                                  overFlow =>  overflow,    -- overFlow => '0'
+        --                                                  saida7seg => saidaHex4);
+        
 
-        showHEX5 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
-                                                         apaga  => apaga,          -- apaga => '0'
-                                                         negativo => negativo,     -- negativo => '0'
-                                                         overFlow =>  overflow,    -- overFlow => '0'
-                                                         saida7seg => saidaHex5);
-        HEX5 <= saidaHex5;
+        -- showHEX5 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
+        --                                                  apaga  => apaga,          -- apaga => '0'
+        --                                                  negativo => negativo,     -- negativo => '0'
+        --                                                  overFlow =>  overflow,    -- overFlow => '0'
+        --                                                  saida7seg => saidaHex5);
+        
 
 
 end architecture;
