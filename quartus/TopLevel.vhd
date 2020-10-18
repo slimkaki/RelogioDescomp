@@ -40,34 +40,34 @@ architecture funcionamento of TopLevel is
                                                     negativo => negativo,     -- negativo => '0'
                                                     overFlow =>  overflow,    -- overFlow => '0'
                                                     saida7seg => saidaHex1);  
-        HEX1 <= saidaHex1
+        HEX1 <= saidaHex1;
 
         showHEX2 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
                                                     apaga  => apaga,          -- apaga => '0'
                                                     negativo => negativo,     -- negativo => '0'
                                                     overFlow =>  overflow,    -- overFlow => '0'
                                                     saida7seg => saidaHex2);
-        HEX2 <= saidaHex2
+        HEX2 <= saidaHex2;
 
         showHEX3 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
                                                     apaga  => apaga,          -- apaga => '0'
                                                     negativo => negativo,     -- negativo => '0'
                                                     overFlow =>  overflow,    -- overFlow => '0'
                                                     saida7seg => saidaHex3);
-        HEX3 <= saidaHex3
+        HEX3 <= saidaHex3;
 
         showHEX4 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
                                                     apaga  => apaga,          -- apaga => '0'
                                                     negativo => negativo,     -- negativo => '0'
                                                     overFlow =>  overflow,    -- overFlow => '0'
                                                     saida7seg => saidaHex4);
-        HEX4 <= saidaHex4
+        HEX4 <= saidaHex4;
 
         showHEX5 : entity work.conversorHex7seg port map(dadoHex => sinalLocal,      -- dadoHex => valor no barramento
                                                     apaga  => apaga,          -- apaga => '0'
                                                     negativo => negativo,     -- negativo => '0'
                                                     overFlow =>  overflow,    -- overFlow => '0'
                                                     saida7seg => saidaHex5);
-        HEX5 <= saidaHex5
+        HEX5 <= saidaHex5;
         
 end architecture;
