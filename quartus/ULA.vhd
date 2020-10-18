@@ -19,13 +19,15 @@ end entity;
 
 architecture comportamento of ULA is
 	constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
-
-	 signal soma : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
- 	 signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_and : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_or: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_xor: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_not: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	
+	signal one : std_logic_vector(larguraDados-1 downto 0) := "00000001";
+	signal soma : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_and : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_or: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_xor: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_not: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal increment: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 
     begin
 		soma 		<= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
@@ -34,13 +36,15 @@ architecture comportamento of ULA is
 		op_or		<= entradaA or entradaB;
 		op_xor		<= entradaA xor entradaB;
 		op_not		<= not entradaA;
+		increment 	<=  STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(one));
 
 
 		saida <=  soma when (seletor = "000") else
 			 subtracao when (seletor = "001") else
 			 entradaA when  (seletor = "010") else
 			 entradaB when  (seletor = "011") else
-			 op_xor when    (seletor = "100") else
+			 increment when (seletor = "100") else
+			 --op_xor when    (seletor = "100") else
 			 op_not when    (seletor = "101") else
 			 op_and when    (seletor = "110") else
 			 op_or when     (seletor = "111") else
