@@ -25,12 +25,12 @@ architecture assincrona of memoriaROM is
 
         tmp(0)   := lea & R0  & R0  & R0  & "0000000000"; -- 0
 
-        tmp(1)   := lea & segU  & R0  & R0  & "0000000110"; -- segU = 6    09:59:56 am
+        tmp(1)   := lea & segU  & R0  & R0  & "0000000110"; -- segU = 6    12:59:56 am
         tmp(2)   := lea & segD  & R0  & R0  & "0000000101"; -- segD = 5
         tmp(3)   := lea & minU  & R0  & R0  & "0000001001"; -- minU = 9
         tmp(4)   := lea & minD  & R0  & R0  & "0000000101"; -- minD = 5
-        tmp(5)   := lea & horU  & R0  & R0  & "0000001001"; -- horU = 9
-        tmp(6)   := lea & horD  & R0  & R0  & "0000000000"; -- horD = 0
+        tmp(5)   := lea & horU  & R0  & R0  & "0000000001"; -- horU = 2
+        tmp(6)   := lea & horD  & R0  & R0  & "0000000010"; -- horD = 1
 
         tmp(7)   := lea & R1    & R0  & R0  & "0000000001"; -- 1    comparaveis
         tmp(8)   := lea & R2    & R0  & R0  & "0000000010"; -- 2
@@ -39,7 +39,7 @@ architecture assincrona of memoriaROM is
         tmp(11)  := lea & RM    & R0  & R0  & "0000000000"; -- 0 = am
 
         -- WHILE
-        tmp(xx)  := jle  & horD  & R0  & R0  & "000000000?";
+        tmp(xx)  := jle & horD  & R0  & R0  & "000000000?";
         tmp(xx)  := jle & segD  & R5  & R0  & "000000000?"; -- if segD <= 5 goto temp(13)
         tmp(xx)  := jl  & segU  & R9  & R0  & "000000000?";
         tmp(xx)  := inc & segU  & R0  & R0  & "0000000000";
