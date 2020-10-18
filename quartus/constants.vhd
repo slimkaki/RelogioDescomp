@@ -24,6 +24,9 @@ package constants is
     constant jle  :  opCode_t := "0111";
     constant jmp  :  opCode_t := "1000";
     constant nop  :  opCode_t := "1001";
+    constant inv  :  opCode_t := "1010";
+    constant load :  opCode_t := "1011";
+    constant store:  opCode_t := "1100";
 
     -- registradores para o relógio
 

@@ -21,38 +21,79 @@ architecture assincrona of memoriaROM is
     function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
     begin
+
+        tmp(0) :=  lea   & R1 & R0 & R0 & "0000000001";
+        tmp(1) :=  store & R1 & R0 & R0 & "0000000001";
+
         -- CÓDIGO DO RELÓGIO:
 
-        tmp(0)   := lea & R0  & R0  & R0  & "0000000000"; -- 0
+        -- Carregando variaveis
+        -- tmp(0)   := lea & R0    & R0  & R0  & "0000000000"; -- 0
 
-        tmp(1)   := lea & segU  & R0  & R0  & "0000000110"; -- segU = 6    12:59:56 am
-        tmp(2)   := lea & segD  & R0  & R0  & "0000000101"; -- segD = 5
-        tmp(3)   := lea & minU  & R0  & R0  & "0000001001"; -- minU = 9
-        tmp(4)   := lea & minD  & R0  & R0  & "0000000101"; -- minD = 5
-        tmp(5)   := lea & horU  & R0  & R0  & "0000000001"; -- horU = 2
-        tmp(6)   := lea & horD  & R0  & R0  & "0000000010"; -- horD = 1
+        -- tmp(1)   := lea & segU  & R0  & R0  & "0000000110"; -- segU = 6    12:59:56 am
+        -- tmp(2)   := lea & segD  & R0  & R0  & "0000000101"; -- segD = 5
+        -- tmp(3)   := lea & minU  & R0  & R0  & "0000001001"; -- minU = 9
+        -- tmp(4)   := lea & minD  & R0  & R0  & "0000000101"; -- minD = 5
+        -- tmp(5)   := lea & horU  & R0  & R0  & "0000000001"; -- horU = 2
+        -- tmp(6)   := lea & horD  & R0  & R0  & "0000000010"; -- horD = 1
 
-        tmp(7)   := lea & R1    & R0  & R0  & "0000000001"; -- 1    comparaveis
-        tmp(8)   := lea & R2    & R0  & R0  & "0000000010"; -- 2
-        tmp(9)   := lea & R9    & R0  & R0  & "0000001001"; -- 9
-        tmp(10)  := lea & R5    & R0  & R0  & "0000000101"; -- 5
-        tmp(11)  := lea & RM    & R0  & R0  & "0000000000"; -- 0 = am
+        -- tmp(7)   := lea & R1    & R0  & R0  & "0000000001"; -- 1    comparaveis
+        -- tmp(8)   := lea & R2    & R0  & R0  & "0000000010"; -- 2
+        -- tmp(9)   := lea & R9    & R0  & R0  & "0000001001"; -- 9
+        -- tmp(10)  := lea & R5    & R0  & R0  & "0000000101"; -- 5
+        -- tmp(11)  := lea & RM    & R0  & R0  & "0000000000"; -- 0 = am
 
-        -- WHILE
-        tmp(xx)  := jle & horD  & R0  & R0  & "000000000?";
-        tmp(xx)  := jle & segD  & R5  & R0  & "000000000?"; -- if segD <= 5 goto temp(13)
-        tmp(xx)  := jl  & segU  & R9  & R0  & "000000000?";
-        tmp(xx)  := inc & segU  & R0  & R0  & "0000000000";
-        tmp(xx)  := mov & segU  & R0  & R0  & "0000000000";
-        
-        tmp(xx)  := jl  & segD  & R5  & R0  & "000000000?";
-        
-        
-        tmp(xx)  := inc & seg
-        
-        tmp(xx)  := jmp & R0    & R0  & R0  & "000000000?";
-        
-        
+        -- -- WHILE
+
+        -- jmp se passou 1 seg continar
+        -- jpm 
+
+        -- tmp(xx)  := jl & segU & R9 & R0  & "0000000+30";
+
+        --     tmp(xx)  := mov & segU & R0 & R0  & "0000000000";
+        --     tmp(xx)  := jl  & segD & R5 & R0  & "0000000+26";
+
+        --         tmp(xx)  := mov & segD & R0 & R0  & "0000000000";
+        --         tmp(xx)  := jl  & minU & R9 & R0  & "0000000+22";
+
+        --             tmp(xx)  := mov & minU  & R0  & R0  & "0000000000";
+        --             tmp(xx)  := jl  & minD  & R5  & R0  & "0000000+18";
+
+        --                 tmp(xx)  := mov & minD  & R0  & R0  & "0000000000";
+        --                 tmp(xx)  := jl  & horU  & R9  & R0  & "0000000+12";
+
+        --                     tmp(xx)  := je  & horD  & R0  & R0  & "00000000+8";
+        --                     tmp(xx)  := jl  & horU  & R2  & R0  & "00000000+5";
+                            
+        --                         tmp(xx)  := inv & RM    & R0  & R0  & "0000000000";
+        --                         tmp(xx)  := mov & horD  & R0  & R0  & "0000000000";
+        --                         tmp(xx)  := mov & horU  & R1  & R0  & "0000000000";
+        --                         tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+
+        --                     tmp(xx)  := inc & horU  & R0  & R0  & "0000000000";
+        --                     tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+                            
+        --                     tmp(xx)  := mov & horU  & R0  & R0  & "0000000000";
+        --                     tmp(xx)  := inc & horD  & R0  & R0  & "0000000000";
+        --                     tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+                        
+        --                 tmp(xx)  := je  & horD  & R0  & R0  & "00000000+2";
+        --                 tmp(xx)  := jmp & R0    & R0  & R0  & "0000000-12";
+
+        --                 tmp(xx)  := inc & horU  & R0  & R0  & "0000000000";
+        --                 tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+                    
+        --             tmp(xx)  := inc & minD  & R0  & R0  & "0000000000";
+        --             tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+
+        --         tmp(xx)  := inc & minU  & R0  & R0  & "0000000000";
+        --         tmp(xx)  := jmp & R0    & R0  & R0  & "começo 000";
+            
+        --     tmp(xx)  := inc & segD & R0 & R0  & "0000000000";
+        --     tmp(xx)  := jmp & R0   & R0 & R0  & "começo 000";
+
+        -- tmp(xx)  := inc & segU & R0 & R0  & "0000000000";
+        -- tmp(xx)  := jmp & R0   & R0 & R0  & "começo 000";
         
         return tmp;
     end initMemory;

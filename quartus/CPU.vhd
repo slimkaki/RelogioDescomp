@@ -4,6 +4,7 @@ use ieee.numeric_std.all;
 
 entity CPU is
     port (
+        CLOCK_50                :  in STD_LOGIC;
         barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(9 downto 0);
         barramentoDadosSaida    :  out STD_LOGIC_VECTOR(9 downto 0);
         barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0)
@@ -34,4 +35,4 @@ architecture comportamento of CPU is
                                                   flagL => flagL,
                                                   palavraControle => palavraControle);
 
-end architecture
+end architecture;

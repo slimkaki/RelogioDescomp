@@ -40,6 +40,8 @@ ARCHITECTURE comportamento OF UnidadeControle IS
                 selOperacaoULA <= subtracao;
             elsif (opCode = mov) then
                 selOperacaoULA <= entradaA;
+            elsif (opCode = inv) then
+                selOperacaoULA <= op_not;
             else
                 selOperacaoULA <= "000";
             end if;
@@ -51,8 +53,8 @@ ARCHITECTURE comportamento OF UnidadeControle IS
         selMuxImed              <= '1' WHEN opCode = lea else '0';
         habEscritaReg           <= '1' WHEN opCode = lea or opCode = mov or opCode = add or opCode = sub or opCode = inc else '0';
         
-        -- HabLeituraMemoria       <= '1' WHEN opCode = ;
-        -- HabEscritaMemoria       <= '1' WHEN opCode = ;
+        HabLeituraMemoria       <= '1' WHEN opCode = load else 0;
+        HabEscritaMemoria       <= '1' WHEN opCode = store else 0;
             -- de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
 
 end architecture;

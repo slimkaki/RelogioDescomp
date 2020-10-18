@@ -11,6 +11,7 @@ entity fetch is
 
 	port (
 		selMux : in std_logic;
+		tt     : in std_logic;
 		CLOCK_50 : in std_logic;
 		endROM : in std_logic_vector(addrWidth-1 DOWNTO 0);
 		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0)
@@ -39,7 +40,7 @@ architecture arch_name OF fetch is
 					  RST => '0'); -- mudar entradas/saidas
 			
 		ROM : entity work.memoriaROM 
-			port map (Endereco => PCout, 
+			port map (Endereco => PCout,
 			 		  Dado => instruction);
 
 		SOMA : entity work.somadorGenerico 

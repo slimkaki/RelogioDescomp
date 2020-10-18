@@ -14,11 +14,11 @@ entity IO_TIMER is
 			  addrWidth : natural := 3
 		 );
 	port(	
-		clk: in std_logic;
-        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: OUT STD_LOGIC_VECTOR(6 downto 0);
-        SW : IN STD_LOGIC_VECTOR(4 downto 0)
+        clk: in std_logic;
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: IN STD_LOGIC_VECTOR(6 downto 0);
+        SW_Hab : IN STD_LOGIC_VECTOR(4 downto 0);
         -- BOTOES
-        KEY: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        KEY_Hab: IN STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 
 end IO_TIMER;
@@ -33,25 +33,12 @@ architecture comportamento of IO_TIMER is
     signal saidaHex3, saidaHex4, saidaHex5 : std_logic_vector(6 downto 0);
 
     begin
-        while SW(0) loop
-            --SET BOTOES
-            process(KEY(0), KEY(1), KEY(2), KEY(3))
-            begin
-                if (KEY(0)) then
-                    --CURSOR GO RIGHT
-                elsif (KEY(1)) then
-                    --CURSOR GO LEFT
-                elsif (KEY(2)) then
-                    --CURSOR GO UP
-                elsif (KEY(3)) then
-                    --CURSOR GO DOWN
-                end if;
-            end process;
-        end loop;
+        --SET BOTOES
+
         
-        -- |  HEX5  |  HEX4  |   HEX3   |   HEX2   |    HEX1   |    HEX0   | --
+        
+        --  |  HEX5  |  HEX4  |   HEX3   |   HEX2   |    HEX1   |    HEX0   | --
         -- | HorasD | HorasU | MinutosD | MinutosU | SegundosD | SegundosU | --
-                
 
         showHEX0 : entity work.conversorHex7seg port map(dadoHex => sinalLocal, -- dadoHex => valor no barramento
                                                          apaga  => apaga,          -- apaga => '0'

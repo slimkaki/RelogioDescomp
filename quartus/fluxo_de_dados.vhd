@@ -8,7 +8,7 @@ entity fluxo_de_dados is
         palavraControle         :  in  STD_LOGIC_VECTOR(8 downto 0);
         barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(9 downto 0);
 
-        opCode                  :  out STD_LOGIC_VECTOR(3 downto 0)  
+        opCode                  :  out STD_LOGIC_VECTOR(3 downto 0);
         barramentoDadosSaida    :  out STD_LOGIC_VECTOR(9 downto 0);
         barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
 
@@ -41,7 +41,7 @@ architecture funcionamento of fluxo_de_dados is
 
         opCode               <= instruc(25 downto 22);
         barramentoDadosSaida <= dadoRB;
-        barramentoEndSaida   <= instruc(9 down to 0);
+        barramentoEndSaida   <= instruc(9 downto 0);
 
         FETCH : entity work.fetch port map (selMux => selMuxJump,
                                             CLOCK_50 => CLOCK_50,

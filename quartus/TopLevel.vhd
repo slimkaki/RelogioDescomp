@@ -17,25 +17,45 @@ architecture funcionamento of TopLevel is
     signal barramentoDadosSaida   : std_logic_vector(9 downto 0);
     signal barramentoEndSaida     : std_logic_vector(9 downto 0);
 
+    signal habilitaHex : std_logic_vector(5 downto 0);
+    signal hab_sw      : STD_LOGIC_VECTOR(4 downto 0);
+    signal hab_key     : STD_LOGIC_VECTOR(3 downto 0);
+
+
     signal tic_tac : std_logic;
     begin
         -- CPU
-        Processador : entity work.CPU port map(barramentoDadosEntrada => barramentoDadosEntrada,
+        Processador : entity work.CPU port map(CLOCK_50 => CLOCK_50,
+                                               barramentoDadosEntrada => barramentoDadosEntrada,
                                                barramentoDadosSaida   => barramentoDadosSaida,
                                                barramentoEndSaida     => barramentoEndSaida);
 
         -- Base de Tempo
         -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
         TICTAC :  entity work.divisorGenerico generic map (divisor => 50000000)   -- divide por 10.
-                                           port map (clk => CLOCK_50, saida_clk => tic_tac);
+                                           port map (clk => CLOCK_50, 
+                                                     saida_clk => tic_tac);
 
 
         -- Periféricos
         IO : entity work.IO_TIMER port map (clk => CLOCK_50,
-                                            HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, 
-                                            HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5,
-                                            SW => SW,
-                                            KEY => KEY);
+                                            HEX0 => HEX0, 
+                                            HEX1 => HEX1, 
+                                            HEX2 => HEX2, 
+                                            HEX3 => HEX3, 
+                                            HEX4 => HEX4, 
+                                            HEX5 => HEX5,
+                                            SW_Hab => hab_sw,
+                                            KEY_Hab => hab_key);
+
+        DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
+                                                     habilitaHex => habilitaHex);
+
+        SEGU : entity work.registradorGenerico port map (DIN     => barramentoDadosSaida(3 downto 0),
+                                                         DOUT    => HEX0,
+                                                         ENABLE  => habilitaHex(0),
+                                                         CLK     => CLOCK_50,
+                                                         RST     => '0');
         
         
 end architecture;
