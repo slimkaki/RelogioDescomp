@@ -48,19 +48,20 @@ architecture funcionamento of TopLevel is
         --                                     HEX3 => HEX3, 
         --                                     HEX4 => HEX4, 
         --                                     HEX5 => HEX5);
-
+		  SEGU : entity work.registradorGenerico generic map (larguraDados => 4) 
+														  port map (DIN     => barramentoEndSaida(3 downto 0),
+																		DOUT    => seg7Input0,
+																		ENABLE  => habilitaHex(2),
+																		CLK     => CLOCK_50,
+																		RST     => '0');
+																		
         showHEX0 : entity work.conversorHex7seg port map(dadoHex => seg7Input0, saida7seg => HEX0); 
         
 
         DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
                                                      habilitaHex => habilitaHex);
 
-        SEGU : entity work.registradorGenerico generic map (larguraDados => 4) 
-                                               port map (DIN     => barramentoDadosSaida(3 downto 0),
-                                                         DOUT    => seg7Input0,
-                                                         ENABLE  => habilitaHex(2),
-                                                         CLK     => CLOCK_50,
-                                                         RST     => '0');
+        
         
         
 end architecture;
