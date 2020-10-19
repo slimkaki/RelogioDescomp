@@ -48,15 +48,25 @@ architecture funcionamento of TopLevel is
         --                                     HEX3 => HEX3, 
         --                                     HEX4 => HEX4, 
         --                                     HEX5 => HEX5);
-		  SEGU : entity work.registradorGenerico generic map (larguraDados => 4) 
-														  port map (DIN     => barramentoEndSaida(3 downto 0),
-																		DOUT    => seg7Input0,
-																		ENABLE  => habilitaHex(2),
-																		CLK     => CLOCK_50,
-																		RST     => '0');
+
+		SEGU : entity work.registradorGenerico generic map (larguraDados => 4) 
+                                               port map (DIN     => barramentoDadosSaida(3 downto 0),
+                                                         DOUT    => seg7Input0,
+                                                         ENABLE  => habilitaHex(0),
+                                                         CLK     => CLOCK_50,
+                                                         RST     => '0');
 																		
-        showHEX0 : entity work.conversorHex7seg port map(dadoHex => seg7Input0, saida7seg => HEX0); 
-        
+                                                         
+        SEGD : entity work.registradorGenerico generic map (larguraDados => 4) 
+                                               port map (DIN     => barramentoDadosSaida(3 downto 0),
+                                                         DOUT    => seg7Input1,
+                                                         ENABLE  => habilitaHex(1),
+                                                         CLK     => CLOCK_50,
+                                                         RST     => '0');
+                                                         
+        showHEX0 : entity work.conversorHex7seg port map(dadoHex => seg7Input0, saida7seg => HEX0);
+        showHEX1 : entity work.conversorHex7seg port map(dadoHex => seg7Input1, saida7seg => HEX1);                                                
+                                                         
 
         DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
                                                      habilitaHex => habilitaHex);

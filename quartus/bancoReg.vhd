@@ -20,7 +20,7 @@ entity bancoReg is
         dadoEscritaA    : in std_logic_vector((larguraDados-1) downto 0);
         escreveA        : in std_logic := '0';
 
-        saidaA          : out std_logic_vector((larguraDados -1) downto 0);
+        saidaC          : out std_logic_vector((larguraDados -1) downto 0);
         saidaB          : out std_logic_vector((larguraDados -1) downto 0)
     );
 end entity;
@@ -42,6 +42,6 @@ begin
             end if;
         end if;
     end process;
-    saidaA <= registrador(to_integer(unsigned(enderecoA)));
+    saidaC <= registrador(to_integer(unsigned(enderecoC)));
     saidaB <= registrador(to_integer(unsigned(enderecoB)));
 end architecture;

@@ -66,7 +66,7 @@ architecture funcionamento of fluxo_de_dados is
                                                   enderecoC => RC,
                                                   dadoEscritaA => Mux2Out,
                                                   escreveA => habEscritaReg,
-                                                  saidaA => dadoRC,
+                                                  saidaC  => dadoRC,
                                                   saidaB  => dadoRB);
 
         ULA : entity work.ULA generic map(larguraDados => 10)

@@ -38,14 +38,19 @@ ARCHITECTURE comportamento OF UnidadeControle IS
             begin
             if (opCode = add) then
                 selOperacaoULA <= soma;
+            
             elsif (opCode = subt or opCode = je or opCode = jl or opCode = jle) then
                 selOperacaoULA <= subtracao;
+           
             elsif (opCode = mov) then
                 selOperacaoULA <= entradaA;
+           
             elsif (opCode = inv) then
                 selOperacaoULA <= op_not;
+           
             else
                 selOperacaoULA <= "000";
+           
             end if;
 
         end process;
