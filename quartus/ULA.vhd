@@ -19,37 +19,45 @@ end entity;
 
 architecture comportamento of ULA is
 	constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
+	
+	signal one : std_logic_vector(larguraDados-1 downto 0) := "0000000001";
+	signal soma : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_and : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_or: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_xor: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal op_not: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal increment: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal jump_le: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal jump_l : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 
-	 signal soma : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
- 	 signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_and : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_or: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_xor: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal op_not: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-	 signal increment: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal preSaida : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 
     begin
 		soma 		<= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
-		subtracao   <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
+		subtracao 	<= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		op_and		<= entradaA and entradaB;
 		op_or		<= entradaA or entradaB;
 		op_not		<= not entradaA;
-		increment   <= STD_LOGIC_VECTOR(unsigned(entradaA) + "00000001");
-		-- op_xor		<= entradaA xor entradaB;
 
+		increment 	<=  STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(one));
+		-- jump_le 	<= STD_LOGIC_VECTOR(unsigned(entradaA) <= unsigned(entradaB));
+		-- jump_l 		<= STD_LOGIC_VECTOR(unsigned(entradaA) < unsigned(entradaB));
 
-		saida <=  soma when (seletor = "000") else
+		preSaida <=  soma when (seletor = "000") else
 			 subtracao when (seletor = "001") else
-			 entradaA  when (seletor = "010") else
-			 entradaB  when (seletor = "011") else
+			 entradaA when  (seletor = "010") else
+			 entradaB when  (seletor = "011") else
 			 increment when (seletor = "100") else
-			 op_not    when (seletor = "101") else
-			 op_and    when (seletor = "110") else
-			 op_or     when (seletor = "111") else
+			 op_not when    (seletor = "101") else
+			 op_and when    (seletor = "110") else
+			 op_or when     (seletor = "111") else
 			 entradaA;      -- outra opcao: saida = entradaA
+			--op_xor when    (seletor = "100") else
 	  
-	  
-		flagZero <= '1' when unsigned(saida) = unsigned(zero) else '0';
-		flagL <= '1' when unsigned(saida) < unsigned(zero) else '0';
+		flagZero <= '1' when unsigned(preSaida) = unsigned(zero) else '0';
+		flagL <= '1' when unsigned(preSaida) < unsigned(zero) else '0';
+
+		saida <= preSaida;
 	  
 end architecture;

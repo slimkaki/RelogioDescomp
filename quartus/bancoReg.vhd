@@ -11,7 +11,7 @@ entity bancoReg is
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
     port
     (
-        CLOCK_50        : in std_logic;
+        CLOCK           : in std_logic;
 
         enderecoA       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
         enderecoB       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
@@ -34,10 +34,10 @@ architecture comportamento of bancoReg is
     shared variable registrador : memoria_t;
 
 begin
-    process(CLOCK_50) is
+    process(CLOCK) is
     begin
-        if (rising_edge(CLOCK_50)) then
-            if (escreveC = '1') then
+        if (rising_edge(CLOCK)) then
+            if (escreveA = '1') then
                 registrador(to_integer(unsigned(enderecoA))) := dadoEscritaA;
             end if;
         end if;

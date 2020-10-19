@@ -4,22 +4,24 @@ use ieee.numeric_std.all;
 
 entity fluxo_de_dados is 
     port(
-        CLOCK_50                :  in  STD_LOGIC;
+        CLOCK                   :  in  STD_LOGIC;
         palavraControle         :  in  STD_LOGIC_VECTOR(8 downto 0);
         barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(9 downto 0);
 
-        opCode                  :  out STD_LOGIC_VECTOR(3 downto 0)  
+        opCode                  :  out STD_LOGIC_VECTOR(3 downto 0);
         barramentoDadosSaida    :  out STD_LOGIC_VECTOR(9 downto 0);
         barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
 
         flagZero                :  out std_logic;
-        flagL                   :  out std_logic;
+        flagL                   :  out std_logic
     );
 
 end entity;
 
 architecture funcionamento of fluxo_de_dados is
-    SIGNAL instruc, Mux1Out, Mux2Out, ULAout, dadoRC, dadoRB : STD_LOGIC_VECTOR(9 downto 0); -- saida fetch
+    SIGNAL instruc : STD_LOGIC_VECTOR(25 downto 0);
+    --SIGNAL flagZero, flagL : STD_LOGIC := '0'; 
+    SIGNAL Mux1Out, Mux2Out, ULAout, dadoRC, dadoRB : STD_LOGIC_VECTOR(9 downto 0); -- saida fetch
 
     alias selMuxJump           : std_logic is palavraControle(8);
     alias selMuxULAImed        : std_logic is palavraControle(7); 
@@ -39,10 +41,10 @@ architecture funcionamento of fluxo_de_dados is
 
         opCode               <= instruc(25 downto 22);
         barramentoDadosSaida <= dadoRB;
-        barramentoEndSaida   <= instruc(9 down to 0);
+        barramentoEndSaida   <= instruc(9 downto 0);
 
         FETCH : entity work.fetch port map (selMux => selMuxJump,
-                                            CLOCK_50 => CLOCK_50,
+                                            CLK  => CLOCK,
                                             endROM => instruc(9 downto 0),
                                             instruction => instruc); 
         
@@ -58,7 +60,7 @@ architecture funcionamento of fluxo_de_dados is
                                                        seletor_MUX => selMuxULAImed,
                                                        saida_MUX => Mux2Out);
                 
-        BancoReg : entity work.bancoReg port map (CLOCK_50 => CLOCK_50,
+        BancoReg : entity work.bancoReg port map (CLOCK     => CLOCK,
                                                   enderecoA => RA,
                                                   enderecoB => RB,
                                                   enderecoC => RC,

@@ -19,7 +19,7 @@ def topLevel():
     """
     tempo = 0
 
-    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 0, 2, 2, 2, 2, 0 
+    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 1, 2, 5, 9, 5, 6 
     timeofday = {True: 'am', False:'pm'}
     ampm = True
 
@@ -31,36 +31,46 @@ def topLevel():
         t1 = time.time()
         if t1-t0 >= 1:
             
-            if (segundosD <= 5):
-                if (segundosU < 9):
-                    segundosU += 1
+            if (segundosU < 9):
+            segundosU += 1
+
+            else:
+                segundosU = 0
+
+                if(segundosD < 5):
+                    segundosD += 1
+
                 else:
-                    segundosU = 0
-                    if(segundosD < 5):
-                        segundosD += 1
+                    segundosD = 0
+
+                    if(minutosU < 9):
+                        minutosU += 1   
+
                     else:
-                        segundosD = 0
-                        if(minutosD <= 5):
-                            if(minutosU < 9):
-                                minutosU += 1   
+                        minutosU = 0
+
+                        if(minutosD < 5):
+                            minutosD += 1
+                            
+                        else: 
+                            minutosD = 0
+
+                            if (horasU < 9 and horasD == 0):
+                                horasU += 1
+                                
                             else:
-                                minutosU = 0
-                                if(minutosD < 5):
-                                    minutosD += 1
-                                else: 
-                                    minutosD = 0
-                                    if (horasU < 9 and horasD == 0):
-                                        horasU += 1
-                                    else:
-                                        if(horasD == 0):
-                                            horasU = 0
-                                            horasD += 1
-                                        if(horasU < 2):
-                                            horasU += 1
-                                        else:
-                                            ampm = not(ampm)
-                                            horasD = 0
-                                            horasU = 1
+
+                                if(horasD == 0):
+                                    horasU = 0
+                                    horasD += 1
+
+                                if(horasU < 2):
+                                    horasU += 1
+
+                                else:
+                                    ampm = not(ampm)
+                                    horasD = 0
+                                    horasU = 1
                                             
 
             t0 = t1

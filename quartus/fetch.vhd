@@ -5,15 +5,15 @@ use ieee.numeric_std.all;
 entity fetch is
 
 	generic (
-		dataWidth: natural := 11;
+		dataWidth: natural := 26;
 		addrWidth: natural := 10
 	);
 
 	port (
 		selMux : in std_logic;
-		CLOCK_50 : in std_logic;
 		endROM : in std_logic_vector(addrWidth-1 DOWNTO 0);
-		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0)
+		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0);
+		CLK : in std_logic
 	);
 
 end entity;
@@ -35,11 +35,11 @@ architecture arch_name OF fetch is
 			port map (DIN => muxOut, 
 					  DOUT => PCout, 
 					  ENABLE => '1', 
-					  CLK => CLOCK_50, 
+					  CLK => CLK, 
 					  RST => '0'); -- mudar entradas/saidas
 			
 		ROM : entity work.memoriaROM 
-			port map (Endereco => PCout, 
+			port map (Endereco => PCout,
 			 		  Dado => instruction);
 
 		SOMA : entity work.somadorGenerico 

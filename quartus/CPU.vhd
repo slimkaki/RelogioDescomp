@@ -4,12 +4,13 @@ use ieee.numeric_std.all;
 
 entity CPU is
     port (
+        CLOCK                   :  in STD_LOGIC;
         barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(9 downto 0);
         barramentoDadosSaida    :  out STD_LOGIC_VECTOR(9 downto 0);
-        barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0)
+        barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
 
         habLeituraMEM           :  out std_logic;
-        habEscritaMEM           :  out std_logic;
+        habEscritaMEM           :  out std_logic
         
 
     );
@@ -27,7 +28,7 @@ architecture comportamento of CPU is
         habEscritaMEM <= palavraControle(0);
 
         -- FLUXO DE DADOS
-        FD : entity work.fluxo_de_dados port map(CLOCK_50 => CLOCK_50,
+        FD : entity work.fluxo_de_dados port map(CLOCK => CLOCK,
                                                  palavraControle => palavraControle,
                                                  barramentoDadosEntrada => barramentoDadosEntrada,
                                                  opCode => opCode,
@@ -38,10 +39,10 @@ architecture comportamento of CPU is
         
         -- UNIDADE DE CONTROLE
         UC : entity work.UnidadeControle port map(
-            CLOCK_50 => CLOCK_50,
+            CLOCK => CLOCK,
             opCode => opCode,
             flagZero => flagZero,
             flagL => flagL,
             palavraControle => palavraControle);
 
-end architecture
+end architecture;

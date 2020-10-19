@@ -17,27 +17,35 @@ package constants is
     constant lea  :  opCode_t := "0000";
     constant mov  :  opCode_t := "0001";
     constant add  :  opCode_t := "0010";
-    constant sub  :  opCode_t := "0011";
+    constant subt  :  opCode_t := "0011";
     constant inc  :  opCode_t := "0100";
     constant je   :  opCode_t := "0101";
     constant jl   :  opCode_t := "0110";
     constant jle  :  opCode_t := "0111";
     constant jmp  :  opCode_t := "1000";
     constant nop  :  opCode_t := "1001";
+    constant inv  :  opCode_t := "1010";
+    constant load :  opCode_t := "1011";
+    constant store:  opCode_t := "1100";
 
     -- registradores para o relógio
 
-    constant R0  :  reg_t := "0000";   -- segundo 1
-    constant R1  :  reg_t := "0001";   -- segundo 2
-    constant R2  :  reg_t := "0010";   -- minuto  1
-    constant R3  :  reg_t := "0011";   -- minuto  2
-    constant R4  :  reg_t := "0100";   -- hora    1
-    constant R5  :  reg_t := "0101";   -- hora    2
+    constant R0  :  reg_t := "0000";   -- zerador
 
-    constant R6  :  reg_t := "0110";   -- registradores apoio
-    constant R7  :  reg_t := "0111";
-    constant R8  :  reg_t := "1000";
-    constant R9  :  reg_t := "1001";
+    constant segU  :  reg_t := "0001";   -- seg1
+    constant segD  :  reg_t := "0010";   -- seg2
+    constant minU  :  reg_t := "0011";   -- min1
+    constant minD  :  reg_t := "0100";   -- min2
+    constant horU  :  reg_t := "0101";   -- hor1
+    constant horD  :  reg_t := "0110";   -- hor2
+    
+    constant R1   :  reg_t := "0111";  -- 0x1
+    constant R2   :  reg_t := "1000";  -- 0x2
+    constant R9   :  reg_t := "1001";  -- 0x9
+    constant R5   :  reg_t := "1010";  -- 0x5
+
+    constant RM   :  reg_t := "1011";  -- am
+
 
     -- imediatos notaveis
 

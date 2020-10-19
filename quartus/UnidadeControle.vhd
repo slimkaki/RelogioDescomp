@@ -11,7 +11,7 @@ ENTITY UnidadeControle IS
 
     PORT (
         -- Input ports
-        CLOCK_50 : IN std_logic;
+        CLOCK : IN std_logic;
         opCode : IN std_logic_vector(3 DOWNTO 0);
 
         flagZero : IN std_logic;
@@ -29,33 +29,34 @@ ARCHITECTURE comportamento OF UnidadeControle IS
     alias habEscritaReg        : std_logic is palavraControle(5);
     alias selOperacaoULA       : std_logic_vector(2 downto 0) is palavraControle(4 downto 2);
     alias habLeituraMEM        : std_logic is palavraControle(1);
-    alias habEscritaMEM        : std_logic is palavraControle(0);
+	alias habEscritaMEM        : std_logic is palavraControle(0);
+        -- jl  : 0101
+        -- jle : 0110
+        -- jmp : 0111
+    begin
+        process (CLOCK) is
+            begin
+            if (opCode = add) then
+                selOperacaoULA <= soma;
+            elsif (opCode = subt or opCode = je or opCode = jl or opCode = jle) then
+                selOperacaoULA <= subtracao;
+            elsif (opCode = mov) then
+                selOperacaoULA <= entradaA;
+            elsif (opCode = inv) then
+                selOperacaoULA <= op_not;
+            else
+                selOperacaoULA <= "000";
+            end if;
 
-BEGIN
-    PROCESS (CLOCK_50) IS
-    BEGIN
-        IF (opCode = add) THEN
-            selOperacaoULA <= soma;
-        ELSIF (opCode = sub OR opCode = je OR opCode = jl OR opCode = jle) THEN
-            selOperacaoULA <= subtracao;
-        ELSIF (opCode = mov) THEN
-            selOperacaoULA <= entradaA;
-        ELSE
-            selOperacaoULA <= "000";
-        END IF;
+        end process;
+        
+        selMuxJump              <= '1' WHEN opCode = je or opCode = jl or opCode = jle or opCode = jmp else '0'; -- instruções de ativação do MUX Jump
+        selMuxULAImed           <= '1' WHEN opCode = mov or opCode = add or opCode = subt or opCode = inc or opCode = je or opCode = jl or opCode = jle else '0' ;-- Para inst        anciar, a atribuição 
+        selMuxImed              <= '1' WHEN opCode = lea else '0';
+        habEscritaReg           <= '1' WHEN opCode = lea or opCode = mov or opCode = add or opCode = subt or opCode = inc else '0';
+        
+        HabLeituraMEM           <= '1' WHEN opCode = load else '0';
+        HabEscritaMEM       <= '1' WHEN opCode = store else '0';
+            -- de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
 
-    END PROCESS;
-
-    selMuxJump <= '1' WHEN opCode = je OR opCode = jl OR opCode = jle OR opCode = jmp ELSE
-        '0'; -- instruções de ativação do MUX Jump
-    selMuxULAImed <= '1' WHEN opCode = mov OR opCode = add OR opCode = sub OR opCode = inc OR opCode = je OR opCode = jl OR opCode = jle ELSE
-        '0';-- Para inst        anciar, a atribuição 
-    selMuxImed <= '1' WHEN opCode = lea ELSE
-        '0';
-    habEscritaReg <= '1' WHEN opCode = lea OR opCode = mov OR opCode = add OR opCode = sub OR opCode = inc ELSE
-        '0';
-    HabLeituraMemoria <= '0' ;
-    HabEscritaMemoria <= '0' ;
-    -- de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
-
-END ARCHITECTURE;
+end architecture;
