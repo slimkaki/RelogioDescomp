@@ -29,6 +29,13 @@ architecture assincrona of memoriaROM is
        -- tmp(2) :=  jmp   & R0   & R0   & R0   & "0000000000";
 		  
 		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
         tmp(0) :=  load  & RT   & R0   & R0   & "0000000111"; -- load time
         tmp(1) :=  lea   & R1   & R0   & R0   & "0000000001";
         tmp(2) :=  je    & R0   & RT   & R1   & "0000000100";
