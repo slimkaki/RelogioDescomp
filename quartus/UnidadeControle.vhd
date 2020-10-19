@@ -34,34 +34,21 @@ ARCHITECTURE comportamento OF UnidadeControle IS
         -- jle : 0110
         -- jmp : 0111
     begin
-        process (CLOCK) is
-            begin
-            if (opCode = add) then
-                selOperacaoULA <= soma;
-            
-            elsif (opCode = subt or opCode = je or opCode = jl or opCode = jle) then
-                selOperacaoULA <= subtracao;
-           
-            elsif (opCode = mov) then
-                selOperacaoULA <= entradaA;
-           
-            elsif (opCode = inv) then
-                selOperacaoULA <= op_not;
-           
-            else
-                selOperacaoULA <= "000";
-           
-            end if;
-
-        end process;
+       
+        selMuxJump              <= '1' WHEN (opCode = jle and flagZero = '1' and flagL = '1') or (opCode = jl and flagL = '1') or (opCode = je and flagZero = '1') or (opCode = jmp) else '0';
         
-        selMuxJump              <= '1' WHEN opCode = je or opCode = jl or opCode = jle or opCode = jmp else '0'; -- instruções de ativação do MUX Jump
+        selOperacaoULA          <= soma      WHEN opCode = add  else 
+                                   subtracao WHEN opCode = subt else
+                                   entradaA  WHEN opCode = mov  else
+                                   increment WHEN opCode = inc  else
+                                   op_not    WHEN opCode = inv  else "011";
+
         selMuxULAImed           <= '1' WHEN opCode = mov or opCode = add or opCode = subt or opCode = inc or opCode = je or opCode = jl or opCode = jle else '0' ;-- Para inst        anciar, a atribuição 
         selMuxImed              <= '1' WHEN opCode = lea else '0';
-        habEscritaReg           <= '1' WHEN opCode = lea or opCode = mov or opCode = add or opCode = subt or opCode = inc else '0';
+        habEscritaReg           <= '1' WHEN opCode = mov or opCode = add or opCode = subt or opCode = inc or opCode = lea or opCode = load else '0';
         
-        HabLeituraMEM           <= '1' WHEN opCode = load else '0';
-        HabEscritaMEM       <= '1' WHEN opCode = store else '0';
+        HabLeituraMEM           <= '1' WHEN opCode = load  else '0';
+        HabEscritaMEM           <= '1' WHEN opCode = store else '0';
             -- de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
 
 end architecture;

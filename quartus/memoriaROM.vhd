@@ -21,9 +21,25 @@ architecture assincrona of memoriaROM is
     function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
     begin
+        ---       OPCODE   Rd(RA) --RB  --Rl(RC)  
+        ---       25^22     21^18   17^14     13^10  9^0   
+      --  tmp(0) :=  lea   & R0 & R0   & R0   & "0000000001"; -- MOV R0,#1
+       -- tmp(1) :=  add   & segU & R0   & segU & "0000000000"; -- ADD SegU + R0 = SeguU
 
-        tmp(0) :=  lea   & segU & R0 & R0 & "0000000001";
-        tmp(1) :=  store & segU & R0 & R0 & "0000000001";
+       -- tmp(2) :=  jmp   & R0   & R0   & R0   & "0000000000";
+		  
+		  
+        tmp(0) :=  load  & RT   & R0   & R0   & "0000000111"; -- load time
+        tmp(1) :=  lea   & R1   & R0   & R0   & "0000000001";
+        tmp(2) :=  je    & R0   & RT   & R1   & "0000000100";
+        tmp(3) :=  jmp   & R0   & R0   & R0   & "0000000000";
+        
+        tmp(4) :=  store & R0   & segU & R0   & "0000000000"; -- INC segU
+        tmp(5) :=  inc   & segU & R0   & segU & "0000000000"; -- INC segU
+
+        tmp(6) :=  load & RT   & R0   & R0   & "0000000110"; -- INC segU
+
+        tmp(7) :=  jmp   & R0   & R0   & R0   & "0000000000";
 
         -- tmp(2) :=  lea   & segU & R0 & R0 & "0000000001";
         -- tmp(3) :=  store & segU & R0 & R0 & "0000000010";

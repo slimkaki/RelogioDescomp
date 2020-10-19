@@ -13,7 +13,13 @@ entity fluxo_de_dados is
         barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
 
         flagZero                :  out std_logic;
-        flagL                   :  out std_logic
+        flagL                   :  out std_logic;
+
+        entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
+        entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
+        saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
+
+        pc : out std_logic_vector(9 DOWNTO 0)
     );
 
 end entity;
@@ -43,10 +49,13 @@ architecture funcionamento of fluxo_de_dados is
         barramentoDadosSaida <= dadoRB;
         barramentoEndSaida   <= instruc(9 downto 0);
 
+        saida_ULA <= ULAout;
+
         FETCH : entity work.fetch port map (selMux => selMuxJump,
                                             CLK  => CLOCK,
                                             endROM => instruc(9 downto 0),
-                                            instruction => instruc); 
+                                            instruction => instruc,
+                                            pc_sig => pc); 
         
         MUX_imed_ram : entity work.muxGenerico2x1 generic map (larguraDados => 10)         
                                                   port map (entradaA_MUX => barramentoDadosEntrada,
@@ -75,7 +84,9 @@ architecture funcionamento of fluxo_de_dados is
                                        seletor => selOperacaoULA,
                                        saida => ULAout,
                                        flagZero => flagZero,
-                                       flagL => flagL);
+                                       flagL => flagL,
+                                       entrada_A => entrada_A,
+                                       entrada_B => entrada_B);
         
 
 end architecture;

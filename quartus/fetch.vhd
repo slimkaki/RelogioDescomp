@@ -13,7 +13,9 @@ entity fetch is
 		selMux : in std_logic;
 		endROM : in std_logic_vector(addrWidth-1 DOWNTO 0);
 		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0);
-		CLK : in std_logic
+		CLK : in std_logic;
+
+		pc_sig : out std_logic_vector(9 DOWNTO 0)
 	);
 
 end entity;
@@ -23,11 +25,14 @@ architecture arch_name OF fetch is
 	SIGNAL muxOut, PCout, somadorOut : std_logic_vector((addrWidth - 1) DOWNTO 0);
 
 	begin
+
+		pc_sig <= PCout;
+
 		MUX : entity work.muxGenerico2x1 
 			generic map ( larguraDados => addrWidth )
 			port map (entradaA_MUX => somadorOut, 
 					  entradaB_Mux => endROM, 
-					  seletor_MUX => '1', 
+					  seletor_MUX => selMux, 
 					  saida_MUX => muxOut);
 		
 		PC : entity work.registradorGenerico 

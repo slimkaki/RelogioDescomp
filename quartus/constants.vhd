@@ -45,6 +45,7 @@ package constants is
     constant R5   :  reg_t := "1010";  -- 0x5
 
     constant RM   :  reg_t := "1011";  -- am
+    constant RT   :  reg_t := "1111";  -- am
 
 
     -- imediatos notaveis

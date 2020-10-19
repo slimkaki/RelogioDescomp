@@ -8,7 +8,15 @@ entity TopLevel is
         KEY : in STD_LOGIC_VECTOR(3 downto 0); -- Usaremos os 4 botões
         CLOCK_50 : in STD_LOGIC;               -- Clock 50 MHz
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0);
-        LED : out STD_LOGIC_VECTOR(9 downto 0) -- Por fim, teremos os 10 LEDs
+        LED : out STD_LOGIC_VECTOR(9 downto 0); -- Por fim, teremos os 10 LEDs
+
+        entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
+        entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
+        saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
+
+        dataout   :  out STD_LOGIC_VECTOR(9 downto 0);
+
+        pc : out std_logic_vector(9 DOWNTO 0)
     );
 end entity;
 
@@ -24,20 +32,29 @@ architecture funcionamento of TopLevel is
     signal hab_sw      : STD_LOGIC_VECTOR(4 downto 0);
     signal hab_key     : STD_LOGIC_VECTOR(3 downto 0);
 
+    signal tictac_z, tictac_r  : std_logic;
 
-    signal tic_tac : std_logic;
     begin
+
+        dataout <= barramentoDadosSaida;
+
         -- CPU
         Processador : entity work.CPU port map(CLOCK => CLOCK_50,
                                                barramentoDadosEntrada => barramentoDadosEntrada,
                                                barramentoDadosSaida   => barramentoDadosSaida,
-                                               barramentoEndSaida     => barramentoEndSaida);
+                                               barramentoEndSaida     => barramentoEndSaida,
+                                               entrada_A => entrada_A,
+                                               entrada_B => entrada_B,
+                                               saida_ULA => saida_ULA,
+                                               pc => pc);
 
         -- Base de Tempo
         -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
-        TICTAC :  entity work.divisorGenerico generic map (divisor => 50000000)   -- divide por 10.
-                                           port map (clk => CLOCK_50, 
-                                                     saida_clk => tic_tac);
+        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 25000000)   -- divide por 10.
+                                           port map (clk => CLOCK_50,
+                                                     habilitaLeitura => tictac_r,
+                                                     limpaLeitura => tictac_z,
+                                                     leituraUmSegundo => barramentoDadosEntrada);
 
 
         -- Periféricos
@@ -69,7 +86,9 @@ architecture funcionamento of TopLevel is
                                                          
 
         DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
-                                                     habilitaHex => habilitaHex);
+                                                     habilitaHex => habilitaHex,
+                                                     tictac_r => tictac_r,
+                                                     tictac_z => tictac_z);
 
         
         

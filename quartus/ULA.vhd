@@ -13,8 +13,12 @@ entity ULA is
 		seletor				: 	in STD_LOGIC_VECTOR(2 downto 0);
         saida				:  	out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 		flagZero			:	out std_logic;
-		flagL				:	out std_logic
-    );
+		flagL				:	out std_logic;
+
+		entrada_A			:   out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+		entrada_B			:   out STD_LOGIC_VECTOR((larguraDados-1) downto 0)
+	
+	);
 end entity;
 
 architecture comportamento of ULA is
@@ -33,7 +37,10 @@ architecture comportamento of ULA is
 
 	signal preSaida : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	 
-    begin
+	begin
+		
+		entrada_A   <= entradaA; 
+		entrada_B   <= entradaB; 
 		soma 		<= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
 		subtracao 	<= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		op_and		<= entradaA and entradaB;
@@ -55,8 +62,8 @@ architecture comportamento of ULA is
 			 entradaA;      -- outra opcao: saida = entradaA
 			--op_xor when    (seletor = "100") else
 	  
-		flagZero <= '1' when unsigned(preSaida) = unsigned(zero) else '0';
-		flagL <= '1' when unsigned(preSaida) < unsigned(zero) else '0';
+		flagZero <= '1' when unsigned(entradaA) = unsigned(entradaB) else '0';
+		flagL    <= '1' when unsigned(entradaA) < unsigned(entradaB) else '0';
 
 		saida <= preSaida;
 	  

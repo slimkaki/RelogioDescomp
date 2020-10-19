@@ -10,7 +10,13 @@ entity CPU is
         barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
 
         habLeituraMEM           :  out std_logic;
-        habEscritaMEM           :  out std_logic
+        habEscritaMEM           :  out std_logic;
+
+        entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
+        entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
+        saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
+
+        pc : out std_logic_vector(9 DOWNTO 0)
         
 
     );
@@ -35,7 +41,11 @@ architecture comportamento of CPU is
                                                  barramentoDadosSaida => barramentoDadosSaida,
                                                  barramentoEndSaida => barramentoEndSaida,
                                                  flagZero => flagZero,
-                                                 flagL => flagL);
+                                                 flagL => flagL,
+                                                 entrada_A => entrada_A,
+                                                 entrada_B => entrada_B,
+                                                 saida_ULA => saida_ULA,
+                                                 pc => pc);
         
         -- UNIDADE DE CONTROLE
         UC : entity work.UnidadeControle port map(
