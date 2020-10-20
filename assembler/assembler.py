@@ -22,17 +22,31 @@ class Assembler(object):
         new_file = []
         for linha in linhas: 
             # print("Line {}: {}".format(self.lineCursor, linha.strip()))
-            b = ",$:"
+            b = ",$"
             for i in range(0,len(b)):
                 linha = linha.replace(b[i],"")
-            new_file.append(self.interpreter(linha.strip()))
+            self.gravaLabel(linha)
+            self.lineCursor += 1
+            
+        self.lineCursor = 0
+
+        for linha in linhas:
+            b = ",$"
+                for i in range(0,len(b)):
+                    linha = linha.replace(b[i],"")
+                new_file.append(self.interpreter(linha.strip()))
             self.lineCursor += 1
         self.writeToFile(new_file)
+    
+    def gravaLabel(self, linha):
+        if (linha[-1] == ":" ):
+            linha = linha.replace(":","")
+            self.label[str(linha)] = self.lineCursor
 
     
     def interpreter(self, linha):
         comando = linha.split(" ")
-        new_line =  "tmp(" + str(self.lineCursor) + ") := "
+        new_line =  'tmp(' + str(self.lineCursor) + ') := "'
         if (comando[0] == 'nop'): #Done
             new_line += self.instructions[comando[0]]
             new_line += self.registers['R0']
@@ -54,9 +68,10 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers['R0']
             new_line += self.registers['R0']
-            print(self.label)
+            # print(self.label)
             end = self.label[comando[1]]
             res = self.hexTo10bits(end)
+
             new_line += str(res)
             
         elif (comando[0] == 'jle'):
@@ -143,11 +158,8 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers['R0']
             new_line += self.famousEnd['0x0']
-            print(comando[0])
-            self.label[str(comando[0])] = str(self.lineCursor)
-            print(self.label)
 
-        new_line += ";\n"
+        new_line += '";\n'
         return new_line
         
     def hexTo10bits(self, end):
