@@ -12,8 +12,8 @@ entity decodificador is
 
         habilitaHex : out std_logic_vector(5 downto 0);
 
-        tictac_r : out std_logic;
-        tictac_z : out std_logic
+        tictac_leitura : out std_logic;
+        tictac_zera : out std_logic
 
 
     );
@@ -33,8 +33,8 @@ architecture comportamento of decodificador is
 		               "100000" WHEN addr = "0000000101" ELSE -- HEX5
                        "000000";
                        
-        tictac_z    <= '1' WHEN addr = "0000000110" else '0';
+        tictac_zera    <= '1' WHEN addr = "0000000110" else '0';
         
-        tictac_r    <= '1' WHEN addr = "0000000111" else '0';
+        tictac_leitura    <= '1' WHEN addr = "0000000111" else '0';
 
 end architecture;

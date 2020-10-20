@@ -1,0 +1,233 @@
+# do relogio_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/rafaelalmada/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/flipflopGenerico.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:01 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/flipflopGenerico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity flipflopGenerico
+# -- Compiling architecture comportamento of flipflopGenerico
+# End time: 13:54:01 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:01 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity divisorGenerico
+# -- Compiling architecture divInteiro of divisorGenerico
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/decodificador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/decodificador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decodificador
+# -- Compiling architecture comportamento of decodificador
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/conversorHex7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/conversorHex7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity conversorHex7seg
+# -- Compiling architecture comportamento of conversorHex7seg
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/constants.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/constants.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package constants
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bancoReg
+# -- Compiling architecture comportamento of bancoReg
+# ** Warning: /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd(34): (vcom-1236) Shared variables must be of a protected type.
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ULA
+# -- Compiling architecture comportamento of ULA
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/somadorGenerico.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/somadorGenerico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity somadorGenerico
+# -- Compiling architecture comportamento of somadorGenerico
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity registradorGenerico
+# -- Compiling architecture comportamento of registradorGenerico
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/muxGenerico2x1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/muxGenerico2x1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity muxGenerico2x1
+# -- Compiling architecture comportamento of muxGenerico2x1
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity divisorGenerico_e_Interface
+# -- Compiling architecture interface of divisorGenerico_e_Interface
+# -- Loading entity divisorGenerico
+# -- Loading entity flipflopGenerico
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/UnidadeControle.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/UnidadeControle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package constants
+# -- Compiling entity UnidadeControle
+# -- Compiling architecture comportamento of UnidadeControle
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaROM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaROM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package constants
+# -- Compiling entity memoriaROM
+# -- Compiling architecture assincrona of memoriaROM
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fetch
+# -- Compiling architecture arch_name of fetch
+# -- Loading entity muxGenerico2x1
+# -- Loading entity registradorGenerico
+# -- Loading package constants
+# -- Loading entity memoriaROM
+# -- Loading entity somadorGenerico
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fluxo_de_dados
+# -- Compiling architecture funcionamento of fluxo_de_dados
+# -- Loading entity fetch
+# -- Loading entity muxGenerico2x1
+# -- Loading entity bancoReg
+# -- Loading entity ULA
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity CPU
+# -- Compiling architecture comportamento of CPU
+# -- Loading entity fluxo_de_dados
+# -- Loading package constants
+# -- Loading entity UnidadeControle
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -2008 -work work {/home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:54:02 on Oct 20,2020
+# vcom -reportprogress 300 -2008 -work work /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TopLevel
+# -- Compiling architecture funcionamento of TopLevel
+# -- Loading entity CPU
+# -- Loading entity divisorGenerico_e_Interface
+# -- Loading entity registradorGenerico
+# -- Loading entity conversorHex7seg
+# -- Loading entity decodificador
+# End time: 13:54:02 on Oct 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Load canceled

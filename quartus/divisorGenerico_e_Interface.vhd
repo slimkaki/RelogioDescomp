@@ -8,6 +8,7 @@ entity divisorGenerico_e_Interface is
       habilitaLeitura  :   in std_logic;
       limpaLeitura     :   in std_logic;
       leituraUmSegundo :   out std_logic_vector(9 downto 0)
+      -- print : out std_logic
    );
 end entity;
 
@@ -27,6 +28,7 @@ registraUmSegundo: entity work.flipflopGenerico
                      CLK => saidaclk_reg1seg,
                      RST => limpaLeitura);
 
+-- print <= saidaclk_reg1seg;
 -- Faz o tristate de saida:
 leituraUmSegundo <= "000000000" & sinalUmSegundo when habilitaLeitura = '1' else "ZZZZZZZZZZ";
 
