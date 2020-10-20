@@ -21,10 +21,11 @@ baseTempo: entity work.divisorGenerico
            port map (clk => clk, saida_clk => saidaclk_reg1seg);
 
 registraUmSegundo: entity work.flipflopGenerico
-generic map(larguraDados => 1)
-   port map (DIN => '1', DOUT => sinalUmSegundo,
-         ENABLE => '1', CLK => saidaclk_reg1seg,
-         RST => limpaLeitura);
+           port map (DIN => '1', 
+                     DOUT => sinalUmSegundo,
+                     ENABLE => '1', 
+                     CLK => saidaclk_reg1seg,
+                     RST => limpaLeitura);
 
 -- Faz o tristate de saida:
 leituraUmSegundo <= "000000000" & sinalUmSegundo when habilitaLeitura = '1' else "ZZZZZZZZZZ";

@@ -13,10 +13,16 @@ entity TopLevel is
         entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
         entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
         saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
+        tictic              :   out STD_LOGIC_VECTOR(9 downto 0);
 
         dataout   :  out STD_LOGIC_VECTOR(9 downto 0);
+        barEndSaida     : out std_logic_vector(9 downto 0);
+
+        tic_r : out std_logic;
+        tic_z : out std_logic;
 
         pc : out std_logic_vector(9 DOWNTO 0)
+    
     );
 end entity;
 
@@ -33,10 +39,15 @@ architecture funcionamento of TopLevel is
     signal hab_key     : STD_LOGIC_VECTOR(3 downto 0);
 
     signal tictac_z, tictac_r  : std_logic;
+    
 
     begin
 
         dataout <= barramentoDadosSaida;
+        tictic  <= barramentoDadosEntrada;
+        barEndSaida <= barramentoEndSaida;
+        tic_r <= tictac_r;
+        tic_z <= tictac_z;
 
         -- CPU
         Processador : entity work.CPU port map(CLOCK => CLOCK_50,
@@ -50,7 +61,7 @@ architecture funcionamento of TopLevel is
 
         -- Base de Tempo
         -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
-        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 25000000)   -- divide por 10.
+        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 2)   -- divide por 10.
                                            port map (clk => CLOCK_50,
                                                      habilitaLeitura => tictac_r,
                                                      limpaLeitura => tictac_z,
