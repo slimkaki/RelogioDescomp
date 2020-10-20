@@ -1,0 +1,4 @@
+LOOP:
+lea $R1, 0x0
+lea $R2, 0x7
+jmp LOOP
