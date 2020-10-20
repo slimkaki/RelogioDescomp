@@ -1,18 +1,18 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity registradorGenerico is
+entity registradorGenerico_WRITE is
     generic (
         larguraDados : natural := 10
     );
     port (DIN : in std_logic_vector(larguraDados-1 downto 0);
           DOUT : out std_logic_vector(larguraDados-1 downto 0);
           ENABLE : in std_logic;
-          CLK,RST : in std_logic
+          CLK,RST, WR : in std_logic
         );
 end entity;
 
-architecture comportamento of registradorGenerico is
+architecture comportamento of registradorGenerico_WRITE is
 begin
     -- In Altera devices, register signals have a set priority.
     -- The HDL design should reflect this priority.
@@ -28,7 +28,7 @@ begin
             -- If none of these takes precedence, update the register output
             -- to be the register input.
             if (rising_edge(CLK)) then
-                if (ENABLE = '1') then
+                if (ENABLE = '1' and WR = '1') then
                         DOUT <= DIN;
                 end if;
             end if;

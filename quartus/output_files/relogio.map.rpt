@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Mon Oct 19 17:42:47 2020
+Tue Oct 20 15:18:40 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -30,19 +30,26 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC
  23. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo
  24. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo
- 25. Parameter Settings for User Entity Instance: registradorGenerico:SEGU
- 26. Parameter Settings for User Entity Instance: registradorGenerico:SEGD
- 27. Parameter Settings for User Entity Instance: decodificador:DECODER
- 28. Port Connectivity Checks: "decodificador:DECODER"
- 29. Port Connectivity Checks: "registradorGenerico:SEGD"
- 30. Port Connectivity Checks: "registradorGenerico:SEGU"
- 31. Port Connectivity Checks: "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo"
- 32. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA"
- 33. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC"
- 34. Port Connectivity Checks: "CPU:Processador"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+ 25. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGU
+ 26. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGD
+ 27. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MINU
+ 28. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MIND
+ 29. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORU
+ 30. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORD
+ 31. Parameter Settings for User Entity Instance: decodificador:DECODER
+ 32. Port Connectivity Checks: "registradorGenerico_WRITE:HORD"
+ 33. Port Connectivity Checks: "registradorGenerico_WRITE:HORU"
+ 34. Port Connectivity Checks: "registradorGenerico_WRITE:MIND"
+ 35. Port Connectivity Checks: "registradorGenerico_WRITE:MINU"
+ 36. Port Connectivity Checks: "registradorGenerico_WRITE:SEGD"
+ 37. Port Connectivity Checks: "registradorGenerico_WRITE:SEGU"
+ 38. Port Connectivity Checks: "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo"
+ 39. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA"
+ 40. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC"
+ 41. Port Connectivity Checks: "CPU:Processador"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -69,13 +76,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 19 17:42:47 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 20 15:18:40 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogio                                     ;
 ; Top-level Entity Name           ; TopLevel                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 85                                          ;
+; Total registers                 ; 54                                          ;
 ; Total pins                      ; 112                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -182,41 +189,42 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; flipflopGenerico.vhd             ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/flipflopGenerico.vhd            ;         ;
-; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd ;         ;
-; UnidadeControle.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/UnidadeControle.vhd             ;         ;
-; TopLevel.vhd                     ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd                    ;         ;
-; fluxo_de_dados.vhd               ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd              ;         ;
-; divisorGenerico.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd             ;         ;
-; decodificador.vhd                ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd               ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd                         ;         ;
-; conversorHex7seg.vhd             ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/conversorHex7seg.vhd            ;         ;
-; constants.vhd                    ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/constants.vhd                   ;         ;
-; bancoReg.vhd                     ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd                    ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaROM.vhd                  ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd                         ;         ;
-; somadorGenerico.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/somadorGenerico.vhd             ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico.vhd         ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/muxGenerico2x1.vhd              ;         ;
-; fetch.vhd                        ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd                       ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; registradorGenerico_WRITE.vhd    ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd   ;         ;
+; flipflopGenerico.vhd             ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/flipflopGenerico.vhd            ;         ;
+; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd ;         ;
+; UnidadeControle.vhd              ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/UnidadeControle.vhd             ;         ;
+; TopLevel.vhd                     ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd                    ;         ;
+; fluxo_de_dados.vhd               ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd              ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico.vhd             ;         ;
+; decodificador.vhd                ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/decodificador.vhd               ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd                         ;         ;
+; conversorHex7seg.vhd             ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/conversorHex7seg.vhd            ;         ;
+; constants.vhd                    ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/constants.vhd                   ;         ;
+; bancoReg.vhd                     ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd                    ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaROM.vhd                  ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd                         ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/somadorGenerico.vhd             ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico.vhd         ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/muxGenerico2x1.vhd              ;         ;
+; fetch.vhd                        ; yes             ; User VHDL File  ; /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd                       ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -224,211 +232,232 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 94             ;
+; Estimate of Logic utilization (ALMs needed) ; 63             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 163            ;
+; Combinational ALUT usage for logic          ; 95             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 19             ;
-;     -- 5 input functions                    ; 60             ;
-;     -- 4 input functions                    ; 43             ;
-;     -- <=3 input functions                  ; 41             ;
+;     -- 6 input functions                    ; 26             ;
+;     -- 5 input functions                    ; 27             ;
+;     -- 4 input functions                    ; 18             ;
+;     -- <=3 input functions                  ; 24             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 85             ;
+; Dedicated logic registers                   ; 54             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 112            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 84             ;
-; Total fan-out                               ; 1114           ;
-; Average fan-out                             ; 2.36           ;
+; Maximum fan-out                             ; 54             ;
+; Total fan-out                               ; 763            ;
+; Average fan-out                             ; 2.05           ;
 +---------------------------------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name                 ; Library Name ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
-; |TopLevel                                  ; 163 (1)             ; 85 (0)                    ; 0                 ; 0          ; 112  ; 0            ; |TopLevel                                                                       ; TopLevel                    ; work         ;
-;    |CPU:Processador|                       ; 113 (0)             ; 50 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                       ; CPU                         ; work         ;
-;       |UnidadeControle:UC|                 ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                    ; UnidadeControle             ; work         ;
-;       |fluxo_de_dados:FD|                  ; 98 (0)              ; 50 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                     ; fluxo_de_dados              ; work         ;
-;          |ULA:ULA|                         ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                             ; ULA                         ; work         ;
-;          |bancoReg:BancoReg|               ; 24 (24)             ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                   ; bancoReg                    ; work         ;
-;          |fetch:FETCH|                     ; 26 (0)              ; 10 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                         ; fetch                       ; work         ;
-;             |memoriaROM:ROM|               ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM          ; memoriaROM                  ; work         ;
-;             |registradorGenerico:PC|       ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC  ; registradorGenerico         ; work         ;
-;             |somadorGenerico:SOMA|         ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA    ; somadorGenerico             ; work         ;
-;          |muxGenerico2x1:MUX_ULA|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA              ; muxGenerico2x1              ; work         ;
-;    |conversorHex7seg:showHEX0|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX0                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX1|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX1                                             ; conversorHex7seg            ; work         ;
-;    |decodificador:DECODER|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|decodificador:DECODER                                                 ; decodificador               ; work         ;
-;    |divisorGenerico_e_Interface:TICTAC|    ; 32 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC                                    ; divisorGenerico_e_Interface ; work         ;
-;       |divisorGenerico:baseTempo|          ; 32 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo          ; divisorGenerico             ; work         ;
-;       |flipflopGenerico:registraUmSegundo| ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo ; flipflopGenerico            ; work         ;
-;    |registradorGenerico:SEGD|              ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico:SEGD                                              ; registradorGenerico         ; work         ;
-;    |registradorGenerico:SEGU|              ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico:SEGU                                              ; registradorGenerico         ; work         ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                       ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name               ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; |TopLevel                            ; 95 (1)              ; 54 (0)                    ; 0                 ; 0          ; 112  ; 0            ; |TopLevel                                                                      ; TopLevel                  ; work         ;
+;    |CPU:Processador|                 ; 85 (0)              ; 50 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                      ; CPU                       ; work         ;
+;       |UnidadeControle:UC|           ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                   ; UnidadeControle           ; work         ;
+;       |fluxo_de_dados:FD|            ; 69 (0)              ; 50 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                    ; fluxo_de_dados            ; work         ;
+;          |ULA:ULA|                   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                            ; ULA                       ; work         ;
+;          |bancoReg:BancoReg|         ; 29 (29)             ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                  ; bancoReg                  ; work         ;
+;          |fetch:FETCH|               ; 23 (0)              ; 10 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                        ; fetch                     ; work         ;
+;             |memoriaROM:ROM|         ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM         ; memoriaROM                ; work         ;
+;             |registradorGenerico:PC| ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC ; registradorGenerico       ; work         ;
+;             |somadorGenerico:SOMA|   ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA   ; somadorGenerico           ; work         ;
+;          |muxGenerico2x1:MUX_ULA|    ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA             ; muxGenerico2x1            ; work         ;
+;    |conversorHex7seg:showHEX0|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX0                                            ; conversorHex7seg          ; work         ;
+;    |decodificador:DECODER|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|decodificador:DECODER                                                ; decodificador             ; work         ;
+;    |registradorGenerico_WRITE:SEGU|  ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGU                                       ; registradorGenerico_WRITE ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                ;
-+---------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                       ; Reason for Removal                          ;
-+---------------------------------------------------------------------+---------------------------------------------+
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~35  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~45  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~55  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~65  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~36  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~46  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~56  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~66  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~37  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~47  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~57  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~67  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~38  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~48  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~58  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~68  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~39  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~49  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~59  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~69  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~40  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~50  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~60  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~70  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~41  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~51  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~61  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~71  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~42  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~52  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~62  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~72  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~43  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~53  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~63  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~73  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~44  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~54  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~64  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~74  ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~115 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~125 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~135 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~145 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~116 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~126 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~136 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~146 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~117 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~127 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~137 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~147 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~118 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~128 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~138 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~148 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~119 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~129 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~139 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~149 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~120 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~130 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~140 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~150 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~121 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~131 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~141 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~151 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~122 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~132 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~142 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~152 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~123 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~133 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~143 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~153 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~124 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~134 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~144 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~154 ; Stuck at GND due to stuck port data_in      ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~95  ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~105 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~96  ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~106 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~97  ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~107 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~98  ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~108 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~99  ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~109 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~100 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~110 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~101 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~111 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~102 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~112 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~103 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~113 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~104 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~114 ; Lost fanout                                 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~75  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~76  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~77  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~78  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~79  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~80  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~81  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~82  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~83  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~84  ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~155 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~156 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~157 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~158 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~159 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~160 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~161 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~162 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~163 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~164 ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 120                             ;                                             ;
-+---------------------------------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                         ;
++------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                ; Reason for Removal                          ;
++------------------------------------------------------------------------------+---------------------------------------------+
+; registradorGenerico_WRITE:HORD|DOUT[0..3]                                    ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:MINU|DOUT[0..3]                                    ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:SEGD|DOUT[0..3]                                    ; Stuck at GND due to stuck port clock_enable ;
+; divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo|DOUT   ; Stuck at VCC due to stuck port data_in      ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[0..7]  ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|tick            ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[8..24] ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~35           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~45           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~55           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~65           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~36           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~46           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~56           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~66           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~37           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~47           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~57           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~67           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~38           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~48           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~58           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~68           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~39           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~49           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~59           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~69           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~40           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~50           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~60           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~70           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~41           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~51           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~61           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~71           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~42           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~52           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~62           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~72           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~43           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~53           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~63           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~73           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~44           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~54           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~64           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~74           ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~115          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~125          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~135          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~145          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~116          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~126          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~136          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~146          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~117          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~127          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~137          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~147          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~118          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~128          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~138          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~148          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~119          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~129          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~139          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~149          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~120          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~130          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~140          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~150          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~121          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~131          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~141          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~151          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~122          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~132          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~142          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~152          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~123          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~133          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~143          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~153          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~124          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~134          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~144          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~154          ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~75           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~76           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~77           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~78           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~79           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~80           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~81           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~82           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~83           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~84           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~95           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~105          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~96           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~106          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~97           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~107          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~98           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~108          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~99           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~109          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~100          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~110          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~101          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~111          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~102          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~112          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~103          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~113          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~104          ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~114          ; Lost fanout                                 ;
+; registradorGenerico_WRITE:MIND|DOUT[0..3]                                    ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:HORU|DOUT[0..3]                                    ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~155          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~156          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~157          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~158          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~159          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~160          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~161          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~162          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~163          ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~164          ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 167                                      ;                                             ;
++------------------------------------------------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                          ;
-+--------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; Register name                                                      ; Reason for Removal        ; Registers Removed due to This Register                              ;
-+--------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~35 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~75, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~155 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~36 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~76, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~156 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~37 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~77, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~157 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~38 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~78, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~158 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~39 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~79, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~159 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~40 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~80, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~160 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~41 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~81, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~161 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~42 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~82, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~162 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~43 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~83, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~163 ;
-; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~44 ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~84, ;
-;                                                                    ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~164 ;
-+--------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                              ;
++----------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name                                                              ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++----------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[7]   ; Lost Fanouts              ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[6],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[5],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[4],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[3],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[2],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[1],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[0],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[8],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[9],       ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[10],      ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[11],      ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[12]       ;
+; divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo|DOUT ; Stuck at VCC              ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|tick,              ;
+;                                                                            ; due to stuck port data_in ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[13],      ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[14],      ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[15],      ;
+;                                                                            ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[16]       ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~35         ; Stuck at GND              ; registradorGenerico_WRITE:MIND|DOUT[0], registradorGenerico_WRITE:HORU|DOUT[0], ;
+;                                                                            ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~155             ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~36         ; Stuck at GND              ; registradorGenerico_WRITE:MIND|DOUT[1], registradorGenerico_WRITE:HORU|DOUT[1], ;
+;                                                                            ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~156             ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~37         ; Stuck at GND              ; registradorGenerico_WRITE:MIND|DOUT[2], registradorGenerico_WRITE:HORU|DOUT[2], ;
+;                                                                            ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~157             ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~38         ; Stuck at GND              ; registradorGenerico_WRITE:MIND|DOUT[3], registradorGenerico_WRITE:HORU|DOUT[3], ;
+;                                                                            ; due to stuck port data_in ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~158             ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~39         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~159             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~40         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~160             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~41         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~161             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~42         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~162             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~43         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~163             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~44         ; Stuck at GND              ; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~164             ;
+;                                                                            ; due to stuck port data_in ;                                                                                 ;
++----------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -436,12 +465,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 85    ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 54    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Clock Enable       ; 44    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -451,14 +480,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[3] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[2] ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|Add0                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[1] ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX0|saida7seg[6]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX1|saida7seg[6]                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX3|saida7seg[5]                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX4|saida7seg[6]                                ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|UnidadeControle:UC|palavraControle[3]                 ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|saida[1]                    ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|saida[5]                    ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX0|saida7seg[3]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX1|saida7seg[0]                                ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX3|saida7seg[0]                                ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX4|saida7seg[0]                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
@@ -568,11 +600,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; divisor        ; 2     ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -596,23 +628,63 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: registradorGenerico:SEGU ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; larguradados   ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGU ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: registradorGenerico:SEGD ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; larguradados   ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGD ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MINU ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MIND ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORU ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORD ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -626,31 +698,58 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decodificador:DECODER"                                                                           ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity ; Details                                                                             ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; habilitahex[5..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:HORD" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "registradorGenerico:SEGD" ;
-+------+-------+----------+----------------------------+
-; Port ; Type  ; Severity ; Details                    ;
-+------+-------+----------+----------------------------+
-; rst  ; Input ; Info     ; Stuck at GND               ;
-+------+-------+----------+----------------------------+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:HORU" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "registradorGenerico:SEGU" ;
-+------+-------+----------+----------------------------+
-; Port ; Type  ; Severity ; Details                    ;
-+------+-------+----------+----------------------------+
-; rst  ; Input ; Info     ; Stuck at GND               ;
-+------+-------+----------+----------------------------+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:MIND" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:MINU" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:SEGD" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico_WRITE:SEGU" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -689,7 +788,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port          ; Type   ; Severity ; Details                                                                             ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 ; hableituramem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; habescritamem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -698,27 +796,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 85                          ;
-;     CLR               ; 1                           ;
-;     ENA               ; 48                          ;
-;     SCLR              ; 25                          ;
+; arriav_ff             ; 54                          ;
+;     ENA               ; 44                          ;
 ;     SLD               ; 10                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 163                         ;
-;     arith             ; 45                          ;
-;         1 data inputs ; 35                          ;
-;         4 data inputs ; 10                          ;
-;     normal            ; 118                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 33                          ;
-;         5 data inputs ; 60                          ;
-;         6 data inputs ; 19                          ;
+; arriav_io_obuf        ; 8                           ;
+; arriav_lcell_comb     ; 96                          ;
+;     arith             ; 10                          ;
+;         1 data inputs ; 10                          ;
+;     normal            ; 86                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 27                          ;
+;         6 data inputs ; 26                          ;
 ; boundary_port         ; 112                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.86                        ;
+; Average LUT depth     ; 3.84                        ;
 +-----------------------+-----------------------------+
 
 
@@ -727,7 +822,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -737,163 +832,148 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 19 17:42:37 2020
+    Info: Processing started: Tue Oct 20 15:18:19 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file flipflopgenerico.vhd
-    Info (12022): Found design unit 1: flipflopGenerico-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/flipflopGenerico.vhd Line: 15
-    Info (12023): Found entity 1: flipflopGenerico File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/flipflopGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico_e_interface.vhd
-    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 14
-    Info (12023): Found entity 1: divisorGenerico_e_Interface File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file unidadecontrole.vhd
-    Info (12022): Found design unit 1: UnidadeControle-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/UnidadeControle.vhd Line: 24
-    Info (12023): Found entity 1: UnidadeControle File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/UnidadeControle.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
-    Info (12022): Found design unit 1: TopLevel-funcionamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 23
-    Info (12023): Found entity 1: TopLevel File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaRam.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaRam.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file io_timer.vhd
-    Info (12022): Found design unit 1: IO_TIMER-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/IO_TIMER.vhd Line: 27
-    Info (12023): Found entity 1: IO_TIMER File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/IO_TIMER.vhd Line: 11
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico_WRITE.vhd
+    Info (12022): Found design unit 1: registradorGenerico_WRITE-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico_WRITE File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file flipflopGenerico.vhd
+    Info (12022): Found design unit 1: flipflopGenerico-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/flipflopGenerico.vhd Line: 15
+    Info (12023): Found entity 1: flipflopGenerico File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/flipflopGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico_e_Interface.vhd
+    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico_e_Interface File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UnidadeControle.vhd
+    Info (12022): Found design unit 1: UnidadeControle-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/UnidadeControle.vhd Line: 24
+    Info (12023): Found entity 1: UnidadeControle File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/UnidadeControle.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file TopLevel.vhd
+    Info (12022): Found design unit 1: TopLevel-funcionamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 23
+    Info (12023): Found entity 1: TopLevel File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaRam.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaRam.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaRam.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file IO_TIMER.vhd
+    Info (12022): Found design unit 1: IO_TIMER-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/IO_TIMER.vhd Line: 27
+    Info (12023): Found entity 1: IO_TIMER File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/IO_TIMER.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file fluxo_de_dados.vhd
-    Info (12022): Found design unit 1: fluxo_de_dados-funcionamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 27
-    Info (12023): Found entity 1: fluxo_de_dados File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: divisorGenerico File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd Line: 5
+    Info (12022): Found design unit 1: fluxo_de_dados-funcionamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 27
+    Info (12023): Found entity 1: fluxo_de_dados File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decodificador.vhd
-    Info (12022): Found design unit 1: decodificador-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd Line: 25
-    Info (12023): Found entity 1: decodificador File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: CPU-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 25
-    Info (12023): Found entity 1: CPU File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7seg-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/conversorHex7seg.vhd Line: 13
-    Info (12023): Found entity 1: conversorHex7seg File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/conversorHex7seg.vhd Line: 4
+    Info (12022): Found design unit 1: decodificador-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/decodificador.vhd Line: 25
+    Info (12023): Found entity 1: decodificador File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/decodificador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
+    Info (12022): Found design unit 1: CPU-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd Line: 25
+    Info (12023): Found entity 1: CPU File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7seg-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/conversorHex7seg.vhd Line: 13
+    Info (12023): Found entity 1: conversorHex7seg File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/conversorHex7seg.vhd Line: 4
 Info (12021): Found 1 design units, including 0 entities, in source file constants.vhd
-    Info (12022): Found design unit 1: constants File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/constants.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file bancoreg.vhd
-    Info (12022): Found design unit 1: bancoReg-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd Line: 28
-    Info (12023): Found entity 1: bancoReg File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaROM.vhd Line: 17
-    Info (12023): Found entity 1: memoriaROM File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaROM.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd Line: 24
-    Info (12023): Found entity 1: ULA File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
-    Info (12022): Found design unit 1: somadorGenerico-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/somadorGenerico.vhd Line: 18
-    Info (12023): Found entity 1: somadorGenerico File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/somadorGenerico.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: constants File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/constants.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bancoReg.vhd
+    Info (12022): Found design unit 1: bancoReg-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd Line: 28
+    Info (12023): Found entity 1: bancoReg File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaROM.vhd Line: 17
+    Info (12023): Found entity 1: memoriaROM File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/memoriaROM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd Line: 24
+    Info (12023): Found entity 1: ULA File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorGenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/somadorGenerico.vhd Line: 18
+    Info (12023): Found entity 1: somadorGenerico File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/somadorGenerico.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: fetch-arch_name File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 23
-    Info (12023): Found entity 1: fetch File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 5
+    Info (12022): Found design unit 1: fetch-arch_name File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 23
+    Info (12023): Found entity 1: fetch File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 5
 Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(10): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(10): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(10): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(10): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(11): used implicit default value for signal "LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processador" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 42
-Info (12128): Elaborating entity "fluxo_de_dados" for hierarchy "CPU:Processador|fluxo_de_dados:FD" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 37
-Info (12128): Elaborating entity "fetch" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 54
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|muxGenerico2x1:MUX" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 31
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 38
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 46
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 50
-Info (12128): Elaborating entity "bancoReg" for hierarchy "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 72
-Info (12128): Elaborating entity "ULA" for hierarchy "CPU:Processador|fluxo_de_dados:FD|ULA:ULA" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 81
-Warning (10540): VHDL Signal Declaration warning at ULA.vhd(27): used explicit default value for signal "one" because signal was never assigned a value File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd Line: 27
-Info (12128): Elaborating entity "UnidadeControle" for hierarchy "CPU:Processador|UnidadeControle:UC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 51
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:TICTAC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 53
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 19
-Info (12128): Elaborating entity "flipflopGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 23
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:SEGU" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 69
-Info (12128): Elaborating entity "conversorHex7seg" for hierarchy "conversorHex7seg:showHEX0" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 84
-Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DECODER" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 88
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(37): object "habLeituraMEM" assigned a value but never read File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 37
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processador" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 43
+Info (12128): Elaborating entity "fluxo_de_dados" for hierarchy "CPU:Processador|fluxo_de_dados:FD" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd Line: 37
+Info (12128): Elaborating entity "fetch" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 54
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|muxGenerico2x1:MUX" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 31
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 38
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 46
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fetch.vhd Line: 50
+Info (12128): Elaborating entity "bancoReg" for hierarchy "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 72
+Info (12128): Elaborating entity "ULA" for hierarchy "CPU:Processador|fluxo_de_dados:FD|ULA:ULA" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 81
+Warning (10540): VHDL Signal Declaration warning at ULA.vhd(27): used explicit default value for signal "one" because signal was never assigned a value File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/ULA.vhd Line: 27
+Info (12128): Elaborating entity "UnidadeControle" for hierarchy "CPU:Processador|UnidadeControle:UC" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/CPU.vhd Line: 51
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:TICTAC" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 56
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 20
+Info (12128): Elaborating entity "flipflopGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 24
+Info (12128): Elaborating entity "registradorGenerico_WRITE" for hierarchy "registradorGenerico_WRITE:SEGU" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 76
+Info (12128): Elaborating entity "conversorHex7seg" for hierarchy "conversorHex7seg:showHEX0" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 126
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DECODER" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 133
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador" is uninferred due to asynchronous read logic File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd Line: 34
+    Info (276007): RAM logic "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador" is uninferred due to asynchronous read logic File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/bancoReg.vhd Line: 34
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[0]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[1]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[2]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[3]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[4]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[5]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[6]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[7]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[8]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[9]" feeding internal logic into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[8]" feeding internal logic into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[9]" feeding internal logic into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[1]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[2]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[3]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[4]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[5]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[6]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[7]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into a wire File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[0]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
-    Warning (13410): Pin "LED[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[7]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[8]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
-    Warning (13410): Pin "LED[9]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 11
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (17049): 56 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "SW[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "SW[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "SW[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "SW[4]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-Info (21057): Implemented 324 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/rafaelalmada/Documents/RelogioDescomp/quartus/TopLevel.vhd Line: 8
+Info (21057): Implemented 251 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 102 output pins
-    Info (21061): Implemented 212 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Mon Oct 19 17:42:47 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (21061): Implemented 139 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 529 megabytes
+    Info: Processing ended: Tue Oct 20 15:18:40 2020
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:43
 
 
