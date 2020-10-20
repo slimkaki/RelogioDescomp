@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dD:/INSPER/6-sem/designComp/RelogioDescomp/quartus/simulation/qsim
 Etoplevel
-Z1 w1603140279
+Z1 w1603224934
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 86
+!i122 108
 R0
 Z11 8relogio.vho
 Z12 Frelogio.vho
 l0
 L39 1
-VZHSOb?5QiPUeMKJacim_G2
-!s100 18F17a_S9P_@@9EXS^8^J0
+V1>ad2DN<1h:41kEKg>^T81
+!s100 WRaodmH6d[Rlz<zz[^hCM1
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1603140280
+Z14 !s110 1603224935
 !i10b 1
-Z15 !s108 1603140280.000000
+Z15 !s108 1603224935.000000
 Z16 !s90 -work|work|relogio.vho|
 Z17 !s107 relogio.vho|
 !i113 1
@@ -48,12 +48,12 @@ R7
 R8
 R9
 R10
-DEx4 work 8 toplevel 0 22 ZHSOb?5QiPUeMKJacim_G2
-!i122 86
-l626
-L174 6928
-VYGen9JKXG0ch1^ELlYjS?2
-!s100 6WOiNj^=YomeYA5JbZFMA3
+DEx4 work 8 toplevel 0 22 1>ad2DN<1h:41kEKg>^T81
+!i122 108
+l411
+L200 4215
+V5bFKJ7U^HcK2n6o`?_1H73
+!s100 nnJ1>iXW@`eca3mzf[3WO1
 R13
 32
 R14
@@ -65,13 +65,13 @@ R17
 R18
 R19
 Etoplevel_vhd_vec_tst
-Z20 w1603140277
+Z20 w1603224932
 R8
 R9
-!i122 87
+!i122 109
 R0
-Z21 8Waveform2.vwf.vht
-Z22 FWaveform2.vwf.vht
+Z21 8Waveform3.vwf.vht
+Z22 FWaveform3.vwf.vht
 l0
 L32 1
 Vi`cW82E4ohG=CFFdJ4Rgz3
@@ -81,8 +81,8 @@ R13
 R14
 !i10b 1
 R15
-Z23 !s90 -work|work|Waveform2.vwf.vht|
-Z24 !s107 Waveform2.vwf.vht|
+Z23 !s90 -work|work|Waveform3.vwf.vht|
+Z24 !s107 Waveform3.vwf.vht|
 !i113 1
 R18
 R19
@@ -90,11 +90,11 @@ Atoplevel_arch
 R8
 R9
 Z25 DEx4 work 20 toplevel_vhd_vec_tst 0 22 i`cW82E4ohG=CFFdJ4Rgz3
-!i122 87
-l71
-Z26 L34 124
-Z27 VP<JfbL@leXTOJN?5gCT^A0
-Z28 !s100 TOG<W]m0M_gm0P@9Aa_Z=0
+!i122 109
+l79
+Z26 L34 136
+Z27 VYi_e>BjOVSZBLmb2ZWS?43
+Z28 !s100 ;bYE[jzb4jUXESBCb0VaI1
 R13
 32
 R14

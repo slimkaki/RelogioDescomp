@@ -5,18 +5,18 @@ use ieee.numeric_std.all;
 entity CPU is
     port (
         CLOCK                   :  in STD_LOGIC;
-        barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(9 downto 0);
-        barramentoDadosSaida    :  out STD_LOGIC_VECTOR(9 downto 0);
-        barramentoEndSaida      :  out STD_LOGIC_VECTOR(9 downto 0);
+        barramentoDadosEntrada  :  in  STD_LOGIC_VECTOR(7 downto 0);
+        barramentoDadosSaida    :  out STD_LOGIC_VECTOR(7 downto 0);
+        barramentoEndSaida      :  out STD_LOGIC_VECTOR(7 downto 0);
 
         habLeituraMEM           :  out std_logic;
         habEscritaMEM           :  out std_logic;
 
-        entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
-        entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
-        saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
+        entrada_A			:   out STD_LOGIC_VECTOR(7 downto 0);
+        entrada_B			:   out STD_LOGIC_VECTOR(7 downto 0);
+        saida_ULA           :   out STD_LOGIC_VECTOR(7 downto 0);
 
-        pc : out std_logic_vector(9 DOWNTO 0)
+        pc : out std_logic_vector(7 DOWNTO 0)
         
 
     );

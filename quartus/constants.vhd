@@ -6,7 +6,7 @@ package constants is
 
     constant OPCODE_WIDTH  : natural :=  4;
     constant REG_SIZE      : natural :=  4;
-    constant IMED_SIZE     : natural := 10;
+    constant IMED_SIZE     : natural :=  8;
 
     subtype opCode_t     is std_logic_vector(OPCODE_WIDTH-1 downto 0);
     subtype reg_t        is std_logic_vector(REG_SIZE-1 downto 0);
@@ -50,7 +50,7 @@ package constants is
 
     -- imediatos notaveis
 
-    constant imediato_nop  : imed_t := "0000000000";
+    constant imediato_nop  : imed_t := "00000000";
 
     -- ULA 
 

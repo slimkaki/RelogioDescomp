@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity fetch is
 
 	generic (
-		dataWidth: natural := 26;
-		addrWidth: natural := 10
+		dataWidth: natural := 24;
+		addrWidth: natural := 8
 	);
 
 	port (
@@ -15,7 +15,7 @@ entity fetch is
 		instruction : out std_logic_vector(dataWidth-1 DOWNTO 0);
 		CLK : in std_logic;
 
-		pc_sig : out std_logic_vector(9 DOWNTO 0)
+		pc_sig : out std_logic_vector(7 DOWNTO 0)
 	);
 
 end entity;
@@ -49,7 +49,7 @@ architecture arch_name OF fetch is
 
 		SOMA : entity work.somadorGenerico 
 			generic map (larguraDados => addrWidth)
-			port map (entradaA => "0000000001",
+			port map (entradaA => "00000001",
 					  entradaB => PCout, 
 					  saida => somadorOut); -- Soma 1 no Program Counter
 

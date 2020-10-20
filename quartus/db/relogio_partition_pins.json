@@ -32,6 +32,146 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[0]",
 					"strict" : false
 				},
@@ -61,10 +201,6 @@
 				},
 				{
 					"name" : "LEDR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[9]",
 					"strict" : false
 				},
 				{
@@ -100,14 +236,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada_A[8]",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_A[9]",
-					"strict" : false
-				},
-				{
 					"name" : "entrada_B[0]",
 					"strict" : false
 				},
@@ -137,14 +265,6 @@
 				},
 				{
 					"name" : "entrada_B[7]",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_B[8]",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_B[9]",
 					"strict" : false
 				},
 				{
@@ -180,11 +300,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "saida_ULA[8]",
+					"name" : "tictic[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saida_ULA[9]",
+					"name" : "tictic[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tictic[7]",
 					"strict" : false
 				},
 				{
@@ -220,11 +364,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "dataout[8]",
+					"name" : "barEndSaida[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dataout[9]",
+					"name" : "barEndSaida[1]",
+					"strict" : false
+				},
+				{
+					"name" : "barEndSaida[2]",
+					"strict" : false
+				},
+				{
+					"name" : "barEndSaida[3]",
+					"strict" : false
+				},
+				{
+					"name" : "barEndSaida[4]",
+					"strict" : false
+				},
+				{
+					"name" : "barEndSaida[5]",
+					"strict" : false
+				},
+				{
+					"name" : "barEndSaida[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tic_r",
+					"strict" : false
+				},
+				{
+					"name" : "tic_z",
 					"strict" : false
 				},
 				{
@@ -257,14 +429,6 @@
 				},
 				{
 					"name" : "pc[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pc[8]",
-					"strict" : false
-				},
-				{
-					"name" : "pc[9]",
 					"strict" : false
 				},
 				{

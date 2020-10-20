@@ -8,20 +8,20 @@ entity TopLevel is
         KEY : in STD_LOGIC_VECTOR(3 downto 0); -- Usaremos os 4 botões
         CLOCK_50 : in STD_LOGIC;               -- Clock 50 MHz
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0);
-        LEDR : out STD_LOGIC_VECTOR(9 downto 0); -- Por fim, teremos os 10 LEDs
+        LEDR : out STD_LOGIC_VECTOR(7 downto 0); -- Por fim, teremos os 10 LEDs
 
-        entrada_A			:   out STD_LOGIC_VECTOR(9 downto 0);
-        entrada_B			:   out STD_LOGIC_VECTOR(9 downto 0);
-        saida_ULA           :   out STD_LOGIC_VECTOR(9 downto 0);
-        tictic              :   out STD_LOGIC_VECTOR(9 downto 0);
+        entrada_A			:   out STD_LOGIC_VECTOR(7 downto 0);
+        entrada_B			:   out STD_LOGIC_VECTOR(7 downto 0);
+        saida_ULA           :   out STD_LOGIC_VECTOR(7 downto 0);
+        tictic              :   out STD_LOGIC_VECTOR(7 downto 0);
 
-        dataout   :  out STD_LOGIC_VECTOR(9 downto 0);
-        barEndSaida     : out std_logic_vector(9 downto 0);
+        dataout   :  out STD_LOGIC_VECTOR(7 downto 0);
+        barEndSaida     : out std_logic_vector(7 downto 0);
 
         tic_r : out std_logic;
         tic_z : out std_logic;
 
-        pc : out std_logic_vector(9 DOWNTO 0)
+        pc : out std_logic_vector(7 DOWNTO 0)
     
     );
 end entity;
@@ -30,9 +30,9 @@ architecture funcionamento of TopLevel is
 
     signal seg7Input0, seg7Input1, seg7Input2, seg7Input3, seg7Input4, seg7Input5 : std_logic_vector(3 downto 0);
 
-    signal barramentoDadosEntrada : std_logic_vector(9 downto 0);
-    signal barramentoDadosSaida   : std_logic_vector(9 downto 0);
-    signal barramentoEndSaida     : std_logic_vector(9 downto 0);
+    signal barramentoDadosEntrada : std_logic_vector(7 downto 0);
+    signal barramentoDadosSaida   : std_logic_vector(7 downto 0);
+    signal barramentoEndSaida     : std_logic_vector(7 downto 0);
 
     signal habilitaHex : std_logic_vector(5 downto 0);
     signal hab_sw      : STD_LOGIC_VECTOR(4 downto 0);
@@ -40,6 +40,7 @@ architecture funcionamento of TopLevel is
 
     signal tictac_zera, tictac_leitura  : std_logic;
 
+    signal progC : std_logic_vector(7 downto 0);
 
     signal habEscritaMEM, habLeituraMEM : std_logic;
     begin
@@ -50,6 +51,8 @@ architecture funcionamento of TopLevel is
         tic_r <= tictac_leitura;
         tic_z <= tictac_zera;
 
+        pc <= progC;
+
         -- CPU
         Processador : entity work.CPU port map(CLOCK => CLOCK_50,
                                                barramentoDadosEntrada => barramentoDadosEntrada,
@@ -58,13 +61,13 @@ architecture funcionamento of TopLevel is
                                                entrada_A => entrada_A,
                                                entrada_B => entrada_B,
                                                saida_ULA => saida_ULA,
-                                               pc => pc,
+                                               pc => progC,
                                                habLeituraMEM => habLeituraMEM,
                                                habEscritaMEM => habEscritaMEM);
 
         -- Base de Tempo
         -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
-        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 2)   -- divide por 10.
+        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 2500000)   -- divide por 10.
                                            port map (clk => CLOCK_50,
                                                      habilitaLeitura => tictac_leitura,
                                                      limpaLeitura => tictac_zera,
@@ -80,9 +83,7 @@ architecture funcionamento of TopLevel is
         --                                     HEX4 => HEX4, 
         --                                     HEX5 => HEX5);
 
-        LEDR(7 downto 0) <= barramentoDadosEntrada(7 downto 0);
-        LEDR(8) <= tictac_zera;
-        LEDR(9) <= tictac_leitura;
+        LEDR <= progC;
 
 		SEGU : entity work.registradorGenerico_WRITE generic map (larguraDados => 4) 
                                                port map (DIN     => barramentoDadosSaida(3 downto 0),

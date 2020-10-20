@@ -24,7 +24,7 @@ end entity;
 architecture comportamento of ULA is
 	constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
 	
-	signal one : std_logic_vector(larguraDados-1 downto 0) := "0000000001";
+	signal one : std_logic_vector(larguraDados-1 downto 0) := "00000001";
 	signal soma : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	signal op_and : STD_LOGIC_VECTOR((larguraDados-1) downto 0);

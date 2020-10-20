@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity bancoReg is
     generic
     (
-        larguraDados        : natural := 10;
+        larguraDados        : natural := 8;
         larguraEndBancoRegs : natural := 4   --Resulta em 2^5=32 posicoes
     );
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
