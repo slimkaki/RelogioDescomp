@@ -2,9 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity flipflopGenerico is
-    generic (
-        larguraDados : natural := 10
-    );
     port (DIN : in std_logic;
           DOUT : out std_logic;
           ENABLE : in std_logic;
