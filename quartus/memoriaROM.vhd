@@ -29,24 +29,17 @@ architecture assincrona of memoriaROM is
        -- tmp(2) :=  jmp   & R0   & R0   & R0   & "0000000000";
 		  
 		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
         tmp(0) :=  load  & RT   & R0   & R0   & "0000000111"; -- load time
-        tmp(1) :=  lea   & R1   & R0   & R0   & "0000000001";
-        tmp(2) :=  je    & R0   & RT   & R1   & "0000000100";
-        tmp(3) :=  jmp   & R0   & R0   & R0   & "0000000000";
+        tmp(1) :=  lea   & R1   & R0   & R0   & "0000000001"; -- load 1 em R1
+        tmp(2) :=  je    & R0   & RT   & R1   & "0000000100"; -- pula pra linha 4 se time = R1
+        tmp(3) :=  jmp   & R0   & R0   & R0   & "0000000000"; -- volta pro começo
         
-        tmp(4) :=  store & R0   & segU & R0   & "0000000000"; -- INC segU
-        tmp(5) :=  inc   & segU & R0   & segU & "0000000000"; -- INC segU
+        tmp(4) :=  store & R0   & segU & R0   & "0000000000"; -- guarda no hex
+        tmp(5) :=  inc   & segU & R0   & segU & "0000000000"; -- inc SegU
 
-        tmp(6) :=  load & RT   & R0   & R0   & "0000000110"; -- INC segU
+        tmp(6) :=  load  & RT   & R0   & R0   & "0000000110"; -- zera time
 
-        tmp(7) :=  jmp   & R0   & R0   & R0   & "0000000000";
+        tmp(7) :=  jmp   & R0   & R0   & R0   & "0000000000"; -- volta pro começo
 
         -- tmp(2) :=  lea   & segU & R0 & R0 & "0000000001";
         -- tmp(3) :=  store & segU & R0 & R0 & "0000000010";

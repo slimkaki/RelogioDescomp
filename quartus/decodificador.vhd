@@ -8,7 +8,7 @@ entity decodificador is
 
     port(
 
-        addr        : in std_logic_vector((addrwidth-1) downto 0);
+        addr : in std_logic_vector((addrwidth-1) downto 0);
 
         habilitaHex : out std_logic_vector(5 downto 0);
 

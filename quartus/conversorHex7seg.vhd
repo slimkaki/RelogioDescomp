@@ -25,19 +25,21 @@ ARCHITECTURE comportamento OF conversorHex7seg IS
     --       3
     --
     SIGNAL preOutput : STD_LOGIC_VECTOR(6 DOWNTO 0);
-BEGIN
+    
+    BEGIN
 
         preOutput <= "1000000" WHEN dadoHex = "0000" ELSE ---0
-            "1111001" WHEN dadoHex = "0001" ELSE ---1
-            "0100100" WHEN dadoHex = "0010" ELSE ---2
-            "0110000" WHEN dadoHex = "0011" ELSE ---3
-            "0011001" WHEN dadoHex = "0100" ELSE ---4
-            "0010010" WHEN dadoHex = "0101" ELSE ---5
-            "0000010" WHEN dadoHex = "0110" ELSE ---6
-            "1111000" WHEN dadoHex = "0111" ELSE ---7
-            "0000000" WHEN dadoHex = "1000" ELSE ---8
-            "0010000" WHEN dadoHex = "1001" ELSE ---9
-            "1111111";
+                     "1111001" WHEN dadoHex = "0001" ELSE ---1
+                     "0100100" WHEN dadoHex = "0010" ELSE ---2
+                     "0110000" WHEN dadoHex = "0011" ELSE ---3
+                     "0011001" WHEN dadoHex = "0100" ELSE ---4
+                     "0010010" WHEN dadoHex = "0101" ELSE ---5
+                     "0000010" WHEN dadoHex = "0110" ELSE ---6
+                     "1111000" WHEN dadoHex = "0111" ELSE ---7
+                     "0000000" WHEN dadoHex = "1000" ELSE ---8
+                     "0010000" WHEN dadoHex = "1001" ELSE ---9
+                     "1111111";
 
         saida7seg <= preOutput;
+
 END ARCHITECTURE;

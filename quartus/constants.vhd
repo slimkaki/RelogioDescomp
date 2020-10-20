@@ -17,7 +17,7 @@ package constants is
     constant lea  :  opCode_t := "0000";
     constant mov  :  opCode_t := "0001";
     constant add  :  opCode_t := "0010";
-    constant subt  :  opCode_t := "0011";
+    constant subt :  opCode_t := "0011";
     constant inc  :  opCode_t := "0100";
     constant je   :  opCode_t := "0101";
     constant jl   :  opCode_t := "0110";
