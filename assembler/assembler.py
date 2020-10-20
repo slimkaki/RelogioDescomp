@@ -22,7 +22,7 @@ class Assembler(object):
         new_file = []
         for linha in linhas: 
             # print("Line {}: {}".format(self.lineCursor, linha.strip()))
-            b = ",$"
+            b = ","
             for i in range(0,len(b)):
                 linha = linha.replace(b[i],"")
             self.gravaLabel(linha)
@@ -31,16 +31,19 @@ class Assembler(object):
         self.lineCursor = 0
 
         for linha in linhas:
-            b = ",$"
-                for i in range(0,len(b)):
-                    linha = linha.replace(b[i],"")
-                new_file.append(self.interpreter(linha.strip()))
+            b = ",$:"
+            for i in range(0,len(b)):
+                linha = linha.replace(b[i],"")
+            new_file.append(self.interpreter(linha.strip()))
             self.lineCursor += 1
         self.writeToFile(new_file)
     
     def gravaLabel(self, linha):
-        if (linha[-1] == ":" ):
-            linha = linha.replace(":","")
+        if (linha[0] == ":" ):
+            print("aaaaa")
+            b = ",$:\n"
+            for i in range(0,len(b)):
+                linha = linha.replace(b[i],"")
             self.label[str(linha)] = self.lineCursor
 
     
@@ -69,7 +72,8 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers['R0']
             # print(self.label)
-            end = self.label[comando[1]]
+            print(self.label)
+            end = "0x"+ str(self.label[comando[1]])
             res = self.hexTo10bits(end)
 
             new_line += str(res)
@@ -88,7 +92,7 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers[comando[2]]
             new_line += self.registers[comando[1]]
-            end = self.label[comando[3]]
+            end = "0x"+ str(self.label[comando[3]])
             res = self.hexTo10bits(end)
             new_line += str(res)
 
@@ -97,7 +101,7 @@ class Assembler(object):
             new_line += self.registers[comando[1]]
             new_line += self.registers[comando[2]]
             new_line += self.registers['R0']
-            end = self.label[comando[3]]
+            end = "0x"+ str(self.label[comando[3]])
             res = self.hexTo10bits(end)
             new_line += str(res) # end
 
@@ -163,6 +167,7 @@ class Assembler(object):
         return new_line
         
     def hexTo10bits(self, end):
+
         n = int(end, 16)  # end = 0x7
         bStr = '' 
         while n > 0: 
