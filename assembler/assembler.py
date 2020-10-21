@@ -32,7 +32,7 @@ class Assembler(object):
     
     def interpreter(self, linha):
         comando = linha.split(" ")
-        new_line =  "tmp(" + str(self.lineCursor) + ") := "
+        new_line =  'tmp(' + str(self.lineCursor) + ') := "'
         if (comando[0] == 'nop'): #Done
             new_line += self.instructions[comando[0]]
             new_line += self.registers['R0']
@@ -147,7 +147,7 @@ class Assembler(object):
             self.label[str(comando[0])] = str(self.lineCursor)
             print(self.label)
 
-        new_line += ";\n"
+        new_line += '";\n'
         return new_line
         
     def hexTo10bits(self, end):

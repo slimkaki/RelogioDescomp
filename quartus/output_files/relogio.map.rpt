@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Tue Oct 20 19:37:19 2020
+Tue Oct 20 21:44:53 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,40 +13,46 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH
- 11. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|muxGenerico2x1:MUX
- 12. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC
- 13. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM
- 14. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA
- 15. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_imed_ram
- 16. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA
- 17. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg
- 18. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|ULA:ULA
- 19. Parameter Settings for User Entity Instance: CPU:Processador|UnidadeControle:UC
- 20. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC
- 21. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo
- 22. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGU
- 23. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGD
- 24. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MINU
- 25. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MIND
- 26. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORU
- 27. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORD
- 28. Parameter Settings for User Entity Instance: decodificador:DECODER
- 29. Port Connectivity Checks: "registradorGenerico_WRITE:HORD"
- 30. Port Connectivity Checks: "registradorGenerico_WRITE:HORU"
- 31. Port Connectivity Checks: "registradorGenerico_WRITE:MIND"
- 32. Port Connectivity Checks: "registradorGenerico_WRITE:MINU"
- 33. Port Connectivity Checks: "registradorGenerico_WRITE:SEGD"
- 34. Port Connectivity Checks: "registradorGenerico_WRITE:SEGU"
- 35. Port Connectivity Checks: "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo"
- 36. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA"
- 37. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC"
- 38. Port Connectivity Checks: "CPU:Processador"
- 39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Elapsed Time Per Partition
- 41. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH
+ 13. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|muxGenerico2x1:MUX
+ 14. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC
+ 15. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM
+ 16. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA
+ 17. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_imed_ram
+ 18. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA
+ 19. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg
+ 20. Parameter Settings for User Entity Instance: CPU:Processador|fluxo_de_dados:FD|ULA:ULA
+ 21. Parameter Settings for User Entity Instance: CPU:Processador|UnidadeControle:UC
+ 22. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC
+ 23. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo
+ 24. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface_fast:TICTAC_fast
+ 25. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo
+ 26. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGU
+ 27. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:SEGD
+ 28. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MINU
+ 29. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:MIND
+ 30. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORU
+ 31. Parameter Settings for User Entity Instance: registradorGenerico_WRITE:HORD
+ 32. Parameter Settings for User Entity Instance: sw:swicthes
+ 33. Parameter Settings for User Entity Instance: but:but
+ 34. Parameter Settings for User Entity Instance: decodificador:DECODER
+ 35. Port Connectivity Checks: "registradorGenerico_WRITE:HORD"
+ 36. Port Connectivity Checks: "registradorGenerico_WRITE:HORU"
+ 37. Port Connectivity Checks: "registradorGenerico_WRITE:MIND"
+ 38. Port Connectivity Checks: "registradorGenerico_WRITE:MINU"
+ 39. Port Connectivity Checks: "registradorGenerico_WRITE:SEGD"
+ 40. Port Connectivity Checks: "registradorGenerico_WRITE:SEGU"
+ 41. Port Connectivity Checks: "divisorGenerico_e_Interface_fast:TICTAC_fast|flipflopGenerico:registraUmSegundo"
+ 42. Port Connectivity Checks: "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo"
+ 43. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA"
+ 44. Port Connectivity Checks: "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC"
+ 45. Post-Synthesis Netlist Statistics for Top Partition
+ 46. Elapsed Time Per Partition
+ 47. Analysis & Synthesis Messages
 
 
 
@@ -73,14 +79,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 20 19:37:19 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 20 21:44:53 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogio                                     ;
 ; Top-level Entity Name           ; TopLevel                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 184                                         ;
-; Total pins                      ; 118                                         ;
+; Total registers                 ; 28                                          ;
+; Total pins                      ; 121                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -198,30 +204,33 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; registradorGenerico_WRITE.vhd    ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd   ;         ;
-; flipflopGenerico.vhd             ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/flipflopGenerico.vhd            ;         ;
-; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd ;         ;
-; UnidadeControle.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/UnidadeControle.vhd             ;         ;
-; TopLevel.vhd                     ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd                    ;         ;
-; fluxo_de_dados.vhd               ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd              ;         ;
-; divisorGenerico.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd             ;         ;
-; decodificador.vhd                ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd               ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd                         ;         ;
-; conversorHex7seg.vhd             ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/conversorHex7seg.vhd            ;         ;
-; constants.vhd                    ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/constants.vhd                   ;         ;
-; bancoReg.vhd                     ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd                    ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaROM.vhd                  ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd                         ;         ;
-; somadorGenerico.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/somadorGenerico.vhd             ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico.vhd         ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/muxGenerico2x1.vhd              ;         ;
-; fetch.vhd                        ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd                       ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++--------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++--------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; but.vhd                              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd                              ;         ;
+; divisorGenerico_e_Interface_fast.vhd ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd ;         ;
+; sw.vhd                               ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd                               ;         ;
+; registradorGenerico_WRITE.vhd        ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd        ;         ;
+; flipflopGenerico.vhd                 ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/flipflopGenerico.vhd                 ;         ;
+; divisorGenerico_e_Interface.vhd      ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd      ;         ;
+; UnidadeControle.vhd                  ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/UnidadeControle.vhd                  ;         ;
+; TopLevel.vhd                         ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd                         ;         ;
+; fluxo_de_dados.vhd                   ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd                   ;         ;
+; divisorGenerico.vhd                  ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd                  ;         ;
+; decodificador.vhd                    ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd                    ;         ;
+; CPU.vhd                              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd                              ;         ;
+; conversorHex7seg.vhd                 ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/conversorHex7seg.vhd                 ;         ;
+; constants.vhd                        ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/constants.vhd                        ;         ;
+; bancoReg.vhd                         ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd                         ;         ;
+; memoriaROM.vhd                       ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/memoriaROM.vhd                       ;         ;
+; ULA.vhd                              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd                              ;         ;
+; somadorGenerico.vhd                  ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/somadorGenerico.vhd                  ;         ;
+; registradorGenerico.vhd              ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico.vhd              ;         ;
+; muxGenerico2x1.vhd                   ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/muxGenerico2x1.vhd                   ;         ;
+; fetch.vhd                            ; yes             ; User VHDL File  ; D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd                            ;         ;
++--------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -229,62 +238,219 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 232            ;
+; Estimate of Logic utilization (ALMs needed) ; 29             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 317            ;
+; Combinational ALUT usage for logic          ; 53             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 131            ;
-;     -- 5 input functions                    ; 33             ;
-;     -- 4 input functions                    ; 88             ;
-;     -- <=3 input functions                  ; 65             ;
+;     -- 6 input functions                    ; 3              ;
+;     -- 5 input functions                    ; 22             ;
+;     -- 4 input functions                    ; 14             ;
+;     -- <=3 input functions                  ; 14             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 184            ;
+; Dedicated logic registers                   ; 28             ;
 ;                                             ;                ;
-; I/O pins                                    ; 118            ;
+; I/O pins                                    ; 121            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 183            ;
-; Total fan-out                               ; 2240           ;
-; Average fan-out                             ; 3.04           ;
+; Maximum fan-out                             ; 28             ;
+; Total fan-out                               ; 498            ;
+; Average fan-out                             ; 1.54           ;
 +---------------------------------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name                 ; Library Name ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
-; |TopLevel                                  ; 317 (1)             ; 184 (0)                   ; 0                 ; 0          ; 118  ; 0            ; |TopLevel                                                                       ; TopLevel                    ; work         ;
-;    |CPU:Processador|                       ; 233 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                       ; CPU                         ; work         ;
-;       |UnidadeControle:UC|                 ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                    ; UnidadeControle             ; work         ;
-;       |fluxo_de_dados:FD|                  ; 218 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                     ; fluxo_de_dados              ; work         ;
-;          |ULA:ULA|                         ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                             ; ULA                         ; work         ;
-;          |bancoReg:BancoReg|               ; 100 (100)           ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                   ; bancoReg                    ; work         ;
-;          |fetch:FETCH|                     ; 65 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                         ; fetch                       ; work         ;
-;             |memoriaROM:ROM|               ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM          ; memoriaROM                  ; work         ;
-;             |registradorGenerico:PC|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC  ; registradorGenerico         ; work         ;
-;             |somadorGenerico:SOMA|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA    ; somadorGenerico             ; work         ;
-;          |muxGenerico2x1:MUX_ULA|          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA              ; muxGenerico2x1              ; work         ;
-;    |conversorHex7seg:showHEX0|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX0                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX1|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX1                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX2|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX2                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX3|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX3                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX4|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX4                                             ; conversorHex7seg            ; work         ;
-;    |conversorHex7seg:showHEX5|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX5                                             ; conversorHex7seg            ; work         ;
-;    |decodificador:DECODER|                 ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|decodificador:DECODER                                                 ; decodificador               ; work         ;
-;    |divisorGenerico_e_Interface:TICTAC|    ; 29 (0)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC                                    ; divisorGenerico_e_Interface ; work         ;
-;       |divisorGenerico:baseTempo|          ; 29 (29)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo          ; divisorGenerico             ; work         ;
-;       |flipflopGenerico:registraUmSegundo| ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo ; flipflopGenerico            ; work         ;
-;    |registradorGenerico_WRITE:HORD|        ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:HORD                                        ; registradorGenerico_WRITE   ; work         ;
-;    |registradorGenerico_WRITE:HORU|        ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:HORU                                        ; registradorGenerico_WRITE   ; work         ;
-;    |registradorGenerico_WRITE:MIND|        ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:MIND                                        ; registradorGenerico_WRITE   ; work         ;
-;    |registradorGenerico_WRITE:MINU|        ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:MINU                                        ; registradorGenerico_WRITE   ; work         ;
-;    |registradorGenerico_WRITE:SEGD|        ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGD                                        ; registradorGenerico_WRITE   ; work         ;
-;    |registradorGenerico_WRITE:SEGU|        ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGU                                        ; registradorGenerico_WRITE   ; work         ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                       ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name               ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; |TopLevel                            ; 53 (0)              ; 28 (0)                    ; 0                 ; 0          ; 121  ; 0            ; |TopLevel                                                                      ; TopLevel                  ; work         ;
+;    |CPU:Processador|                 ; 46 (0)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                      ; CPU                       ; work         ;
+;       |UnidadeControle:UC|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                   ; UnidadeControle           ; work         ;
+;       |fluxo_de_dados:FD|            ; 43 (0)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                    ; fluxo_de_dados            ; work         ;
+;          |ULA:ULA|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                            ; ULA                       ; work         ;
+;          |bancoReg:BancoReg|         ; 10 (10)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                  ; bancoReg                  ; work         ;
+;          |fetch:FETCH|               ; 16 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                        ; fetch                     ; work         ;
+;             |memoriaROM:ROM|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM         ; memoriaROM                ; work         ;
+;             |registradorGenerico:PC| ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC ; registradorGenerico       ; work         ;
+;             |somadorGenerico:SOMA|   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA   ; somadorGenerico           ; work         ;
+;          |muxGenerico2x1:MUX_ULA|    ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA             ; muxGenerico2x1            ; work         ;
+;    |conversorHex7seg:showHEX0|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX0                                            ; conversorHex7seg          ; work         ;
+;    |registradorGenerico_WRITE:SEGU|  ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGU                                       ; registradorGenerico_WRITE ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                   ;
++----------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                          ; Reason for Removal                          ;
++----------------------------------------------------------------------------------------+---------------------------------------------+
+; registradorGenerico_WRITE:HORD|DOUT[0..3]                                              ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:HORU|DOUT[0..3]                                              ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:MIND|DOUT[0..3]                                              ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:MINU|DOUT[0..3]                                              ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico_WRITE:SEGD|DOUT[0..3]                                              ; Stuck at GND due to stuck port clock_enable ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|flipflopGenerico:registraUmSegundo|DOUT   ; Stuck at VCC due to stuck port data_in      ;
+; divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo|DOUT             ; Stuck at VCC due to stuck port data_in      ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[0..2]  ; Lost fanout                                 ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|tick            ; Lost fanout                                 ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[3..17] ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[0..7]            ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|tick                      ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[8..24]           ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~77                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~78                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~79                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~80                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~81                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~82                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~83                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~84                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~85                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~86                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~87                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~88                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~89                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~90                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~91                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~92                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~93                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~94                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~95                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~96                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~97                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~98                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~99                     ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~100                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~101                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~102                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~103                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~104                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~105                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~106                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~107                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~108                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~109                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~110                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~111                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~112                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~113                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~114                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~115                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~116                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~117                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~118                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~119                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~120                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~121                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~122                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~123                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~124                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~125                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~126                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~127                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~128                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~129                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~130                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~131                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~132                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~133                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~134                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~135                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~136                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~137                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~138                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~139                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~140                    ; Lost fanout                                 ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~21                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~29                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~37                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~45                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~53                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~61                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~22                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~30                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~38                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~46                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~54                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~62                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~23                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~31                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~39                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~47                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~55                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~63                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~24                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~32                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~40                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~48                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~56                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~64                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~25                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~33                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~41                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~49                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~57                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~65                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~26                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~34                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~42                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~50                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~58                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~66                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~27                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~35                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~43                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~51                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~59                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~67                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~28                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~36                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~44                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~52                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~60                     ; Stuck at GND due to stuck port data_in      ;
+; CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador~68                     ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 179                                                ;                                             ;
++----------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                             ;
++--------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                                                                        ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++--------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[7]             ; Lost Fanouts              ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[6],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[5],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[4],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[3],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[2],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[1],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[0],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[8],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[9],            ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[10],           ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[11],           ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[12]            ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[2]   ; Lost Fanouts              ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[1],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[0],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[3],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[4],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[5],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[6],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[7]   ;
+; divisorGenerico_e_Interface_fast:TICTAC_fast|flipflopGenerico:registraUmSegundo|DOUT ; Stuck at VCC              ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|tick,         ;
+;                                                                                      ; due to stuck port data_in ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[8],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[9],  ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[10], ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo|contador[11]  ;
+; divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo|DOUT           ; Stuck at VCC              ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|tick,                   ;
+;                                                                                      ; due to stuck port data_in ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[13],           ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[14],           ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[15],           ;
+;                                                                                      ;                           ; divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo|contador[16]            ;
++--------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -292,12 +458,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 184   ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 1     ;
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 152   ;
+; Number of registers using Clock Enable       ; 20    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -307,22 +473,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[0] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|Add0                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX0|saida7seg[5]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX1|saida7seg[5]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX2|saida7seg[5]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX3|saida7seg[6]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX4|saida7seg[6]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX5|saida7seg[6]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|UnidadeControle:UC|palavraControle[3]                 ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|saida[1]                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[3] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX0|saida7seg[6]                                ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA|saida[0]                    ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX0|saida7seg[0]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX1|saida7seg[0]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX2|saida7seg[3]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX3|saida7seg[3]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX4|saida7seg[0]                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|conversorHex7seg:showHEX5|saida7seg[0]                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
@@ -432,21 +587,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC ;
-+----------------+---------+------------------------------------------------------+
-; Parameter Name ; Value   ; Type                                                 ;
-+----------------+---------+------------------------------------------------------+
-; divisor        ; 2500000 ; Signed Integer                                       ;
-+----------------+---------+------------------------------------------------------+
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo ;
-+----------------+---------+--------------------------------------------------------------------------------+
-; Parameter Name ; Value   ; Type                                                                           ;
-+----------------+---------+--------------------------------------------------------------------------------+
-; divisor        ; 2500000 ; Signed Integer                                                                 ;
-+----------------+---------+--------------------------------------------------------------------------------+
++----------------+----------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                          ;
++----------------+----------+-------------------------------------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                                                ;
++----------------+----------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface_fast:TICTAC_fast ;
++----------------+--------+-----------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                            ;
++----------------+--------+-----------------------------------------------------------------+
+; divisor        ; 250000 ; Signed Integer                                                  ;
++----------------+--------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo ;
++----------------+--------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                                                      ;
++----------------+--------+-------------------------------------------------------------------------------------------+
+; divisor        ; 250000 ; Signed Integer                                                                            ;
++----------------+--------+-------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -507,6 +682,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------------------+
 ; larguradados   ; 4     ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sw:swicthes ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; addr           ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: but:but ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; addr           ; 4     ; Signed Integer              ;
++----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -574,6 +769,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorGenerico_e_Interface_fast:TICTAC_fast|flipflopGenerico:registraUmSegundo" ;
++--------+-------+----------+---------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                         ;
++--------+-------+----------+---------------------------------------------------------------------------------+
+; din    ; Input ; Info     ; Stuck at VCC                                                                    ;
+; enable ; Input ; Info     ; Stuck at VCC                                                                    ;
++--------+-------+----------+---------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo" ;
 +--------+-------+----------+-----------------------------------------------------------------------+
@@ -604,42 +809,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+----------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:Processador"                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; hableituramem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 184                         ;
-;     CLR               ; 1                           ;
-;     ENA               ; 152                         ;
-;     SCLR              ; 22                          ;
-;     SLD               ; 8                           ;
-;     plain             ; 1                           ;
+; arriav_ff             ; 28                          ;
+;     ENA               ; 20                          ;
+;     SCLR              ; 8                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 317                         ;
-;     arith             ; 39                          ;
-;         1 data inputs ; 31                          ;
-;         4 data inputs ; 8                           ;
-;     normal            ; 278                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 80                          ;
-;         5 data inputs ; 33                          ;
-;         6 data inputs ; 131                         ;
-; boundary_port         ; 118                         ;
+; arriav_lcell_comb     ; 55                          ;
+;     arith             ; 17                          ;
+;         1 data inputs ; 8                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 8                           ;
+;     normal            ; 38                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 13                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 3                           ;
+; boundary_port         ; 121                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.54                        ;
+; Max LUT depth         ; 4.80                        ;
+; Average LUT depth     ; 2.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -648,7 +842,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -658,10 +852,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 20 19:37:09 2020
+    Info: Processing started: Tue Oct 20 21:44:44 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file but.vhd
+    Info (12022): Found design unit 1: but-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 17
+    Info (12023): Found entity 1: but File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico_e_interface_fast.vhd
+    Info (12022): Found design unit 1: divisorGenerico_e_Interface_fast-interface File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico_e_Interface_fast File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sw.vhd
+    Info (12022): Found design unit 1: sw-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 17
+    Info (12023): Found entity 1: sw File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico_write.vhd
     Info (12022): Found design unit 1: registradorGenerico_WRITE-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd Line: 15
     Info (12023): Found entity 1: registradorGenerico_WRITE File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/registradorGenerico_WRITE.vhd Line: 4
@@ -690,7 +893,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file divisor
     Info (12022): Found design unit 1: divisorGenerico-divInteiro File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd Line: 15
     Info (12023): Found entity 1: divisorGenerico File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decodificador.vhd
-    Info (12022): Found design unit 1: decodificador-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd Line: 25
+    Info (12022): Found design unit 1: decodificador-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd Line: 31
     Info (12023): Found entity 1: decodificador File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/decodificador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
     Info (12022): Found design unit 1: CPU-comportamento File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 25
@@ -722,8 +925,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file fetch.v
     Info (12022): Found design unit 1: fetch-arch_name File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 23
     Info (12023): Found entity 1: fetch File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 5
 Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(45): object "habLeituraMEM" assigned a value but never read File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 45
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processador" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 57
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processador" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 62
 Info (12128): Elaborating entity "fluxo_de_dados" for hierarchy "CPU:Processador|fluxo_de_dados:FD" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 37
 Info (12128): Elaborating entity "fetch" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 54
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|muxGenerico2x1:MUX" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fetch.vhd Line: 31
@@ -734,47 +936,117 @@ Info (12128): Elaborating entity "bancoReg" for hierarchy "CPU:Processador|fluxo
 Info (12128): Elaborating entity "ULA" for hierarchy "CPU:Processador|fluxo_de_dados:FD|ULA:ULA" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/fluxo_de_dados.vhd Line: 81
 Warning (10540): VHDL Signal Declaration warning at ULA.vhd(27): used explicit default value for signal "one" because signal was never assigned a value File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/ULA.vhd Line: 27
 Info (12128): Elaborating entity "UnidadeControle" for hierarchy "CPU:Processador|UnidadeControle:UC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/CPU.vhd Line: 51
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:TICTAC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 70
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:TICTAC" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 75
 Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 20
 Info (12128): Elaborating entity "flipflopGenerico" for hierarchy "divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 24
-Info (12128): Elaborating entity "registradorGenerico_WRITE" for hierarchy "registradorGenerico_WRITE:SEGU" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 88
-Info (12128): Elaborating entity "conversorHex7seg" for hierarchy "conversorHex7seg:showHEX0" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 138
-Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DECODER" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 145
+Info (12128): Elaborating entity "divisorGenerico_e_Interface_fast" for hierarchy "divisorGenerico_e_Interface_fast:TICTAC_fast" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 81
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 20
+Info (12128): Elaborating entity "registradorGenerico_WRITE" for hierarchy "registradorGenerico_WRITE:SEGU" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 99
+Info (12128): Elaborating entity "conversorHex7seg" for hierarchy "conversorHex7seg:showHEX0" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 149
+Info (12128): Elaborating entity "sw" for hierarchy "sw:swicthes" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 156
+Info (12128): Elaborating entity "but" for hierarchy "but:but" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 161
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DECODER" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 166
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador" is uninferred due to asynchronous read logic File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/bancoReg.vhd Line: 34
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[0]" to the node "tictic[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[0]" to the node "tictic[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[0]" to the node "tictic[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[1]" to the node "tictic[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[2]" to the node "tictic[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[3]" to the node "tictic[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[4]" to the node "tictic[4]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[5]" to the node "tictic[5]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[6]" to the node "tictic[6]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "sw:swicthes|dataout[7]" to the node "tictic[7]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/sw.vhd Line: 13
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[1]" to the node "tictic[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[1]" to the node "tictic[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[2]" to the node "tictic[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[2]" to the node "tictic[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[3]" to the node "tictic[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[3]" to the node "tictic[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[4]" to the node "tictic[4]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[4]" to the node "tictic[4]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[5]" to the node "tictic[5]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[5]" to the node "tictic[5]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[6]" to the node "tictic[6]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[6]" to the node "tictic[6]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[7]" to the node "tictic[7]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "divisorGenerico_e_Interface_fast:TICTAC_fast|leituraUmSegundo[7]" to the node "tictic[7]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface_fast.vhd Line: 10
 Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[1]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[2]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[3]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[4]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[5]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[6]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
-    Warning (13051): Converted the fanout from the open-drain buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[7]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_imed_ram|saida_MUX[7]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13051): Converted the fanout from the open-drain buffer "but:but|dataout[4]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13051): Converted the fanout from the open-drain buffer "but:but|dataout[5]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13051): Converted the fanout from the open-drain buffer "but:but|dataout[6]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13051): Converted the fanout from the open-drain buffer "but:but|dataout[7]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into a wire File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[0]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
+    Warning (13047): Converted the fan-out from the tri-state buffer "but:but|dataout[0]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13047): Converted the fan-out from the tri-state buffer "but:but|dataout[1]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13047): Converted the fan-out from the tri-state buffer "but:but|dataout[2]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into an OR gate File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
+    Warning (13047): Converted the fan-out from the tri-state buffer "but:but|dataout[3]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into an OR gate File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/but.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 10
+    Warning (13410): Pin "barEndSaida[2]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 19
+    Warning (13410): Pin "barEndSaida[4]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 19
+    Warning (13410): Pin "barEndSaida[5]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 19
+    Warning (13410): Pin "barEndSaida[6]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 19
     Warning (13410): Pin "barEndSaida[7]" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 19
+    Warning (13410): Pin "tic_r" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 21
+    Warning (13410): Pin "tic_z" is stuck at GND File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 109 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "SW[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "SW[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "SW[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "SW[4]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 8
-Info (21057): Implemented 588 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[7]" File: D:/INSPER/6-sem/designComp/RelogioDescomp/quartus/TopLevel.vhd Line: 7
+Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
     Info (21059): Implemented 108 output pins
-    Info (21061): Implemented 470 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Tue Oct 20 19:37:19 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+    Info (21061): Implemented 73 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Tue Oct 20 21:44:53 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 
