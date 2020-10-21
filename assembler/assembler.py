@@ -27,7 +27,7 @@ class Assembler(object):
                 linha = linha.replace(b[i],"")
             self.gravaLabel(linha)
             self.lineCursor += 1
-            
+        print(self.label)
         self.lineCursor = 0
 
         for linha in linhas:
@@ -40,7 +40,6 @@ class Assembler(object):
     
     def gravaLabel(self, linha):
         if (linha[0] == ":" ):
-            print("aaaaa")
             b = ",$:\n"
             for i in range(0,len(b)):
                 linha = linha.replace(b[i],"")
