@@ -1,0 +1,5 @@
+lea $R1, 0x0
+jmp :LOOP
+add $R1, $R2, $segD
+:LOOP
+lea $R1, 0x0

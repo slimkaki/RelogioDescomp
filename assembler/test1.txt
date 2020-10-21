@@ -1,15 +1,77 @@
-
 lea $segU, 0x6
-lea $segD, 0x5
-lea $minU, 0x9
-lea $minD, 0x5
-lea $horU, 0x2
-lea $horD, 0x1
-
 store $segU, 0x0
+lea $segD, 0x0
 store $segD, 0x1
+lea $minU, 0x9
 store $minU, 0x2
+lea $minD, 0x5
 store $minD, 0x3
+lea $horU, 0x2
 store $horU, 0x4
+lea $horD, 0x1
 store $horD, 0x5
-
+lea $R1, 0x1
+lea $R2, 0x2
+lea $R9, 0x9
+lea $R5, 0x5
+lea $RM, 0x0
+:LOOP1
+load $RT, 0x7
+lea $R0, 0x0
+je $RT, $R0, :LOOP1
+store $R0, 0x5
+jl $R9, $segU, :LOOP2
+mov $segU, $R0
+store $segU, 0x0
+jl $segD, $R0, :LOOP3
+mov $segD, $R0
+store $segD, 0x1
+jl $R9, $minU, :LOOP9
+mov $minU, $R0
+:LOOP8
+store $minU, 0x2
+jl $R5, $minD, :LOOP10
+mov $minD, $R0
+store $minD, 0x3
+jl $R9, $horU, :LOOP6
+je $horD, $R0, :LOOP5
+jl $R2, $horU, :LOOP4
+inv $RM
+mov $horD, $R0
+store $horD, 0x5
+mov $horU, $R1
+store $horU, 0x4
+jmp :LOOP1
+:LOOP4
+inc $horU
+store $horU, 0x4
+jmp :LOOP1
+:LOOP5
+mov $horU, $R0
+store $horU, 0x4
+inc $horD
+:LOOP7
+store $horD, 0x5
+jmp :LOOP1
+:LOOP6
+je $horD, $R0, :LOOP7
+jmp :LOOP8
+inc $horU
+store $horU, 0x4
+jmp :LOOP1
+:LOOP10
+inc $minD
+store $minD, 0x3
+jmp :LOOP1
+:LOOP9
+inc $minU
+store $minU, 0x2
+jmp :LOOP1
+:LOOP3
+inc $segD
+store $segD, 0x1
+jmp :LOOP1
+:LOOP2
+inc $segU
+store $segU, 0x0
+jmp :LOOP1
