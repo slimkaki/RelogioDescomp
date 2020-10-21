@@ -6,6 +6,7 @@ import sys
 class Assembler(object):
     def __init__(self, filename):
         self.filename = filename
+        self.new = ""
         self.lineCursor = 0
         self.registers = {'R0': '0000', 'segU' : '0001', 'segD' : '0010', 'minU': '0011', 'minD' : '0100', 
                  'horU': '0101', 'horD': '0110', 'R1': '0111', 'R2': '1000', 'R9': '1001', 'R5': '1010',
@@ -71,7 +72,7 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers['R0']
             # print(self.label)
-            print(self.label)
+            # print(self.label)
             end = "0x"+ str(self.label[comando[1]])
             res = self.hexTo10bits(end)
 
@@ -79,10 +80,10 @@ class Assembler(object):
             
         elif (comando[0] == 'jle'):
             new_line += self.instructions[comando[0]]
-            new_line += self.registers[comando[1]]
-            new_line += self.registers[comando[2]]
             new_line += self.registers['R0']
-            end = self.label[comando[3]]
+            new_line += self.registers[comando[2]]
+            new_line += self.registers[comando[1]]
+            end = "0x"+ str(self.label[comando[3]])
             res = self.hexTo10bits(end)
             new_line += str(res) # End
             
@@ -96,10 +97,11 @@ class Assembler(object):
             new_line += str(res)
 
         elif (comando[0] == 'jl'): #Done
+            # jl RC, RB
             new_line += self.instructions[comando[0]]
-            new_line += self.registers[comando[1]]
-            new_line += self.registers[comando[2]]
             new_line += self.registers['R0']
+            new_line += self.registers[comando[2]]
+            new_line += self.registers[comando[1]]
             end = "0x"+ str(self.label[comando[3]])
             res = self.hexTo10bits(end)
             new_line += str(res) # end
@@ -115,8 +117,8 @@ class Assembler(object):
         elif (comando[0] == 'mov'): #Done
             new_line += self.instructions[comando[0]]
             new_line += self.registers[comando[1]]
-            new_line += self.registers[comando[2]]
             new_line += self.registers['R0']
+            new_line += self.registers[comando[2]]
             new_line += self.famousEnd['0x0']
         
         elif (comando[0] == 'add'): #Done
@@ -162,6 +164,7 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.famousEnd['0x0']
 
+
         new_line += '";\n'
         return new_line
         
@@ -177,19 +180,46 @@ class Assembler(object):
         res = faltam*'0' + str(bStr)
         return res
 
+    def makeMIF(self):
+        self.lineCursor = 0
+        mif_name = "initROM.mif"
+        new_file = open(mif_name, "w")
+        start = """DEPTH = 1024; -- The size of memory in words
+WIDTH = 26; -- The size of data in bits
+ADDRESS_RADIX = HEX; -- The radix for address values
+DATA_RADIX = BIN; -- The radix for data values
+CONTENT -- start of (address : data pairs)
+BEGIN\n"""
+        read_file = open(self.new, 'r') 
+        linhas = read_file.readlines()
+        for linha in linhas:
+            b = '"'
+            for i in range(0,len(b)):
+                linha = linha.replace(b[i],"")
+            mystr = linha.split(" ")
+            myline = hex(self.lineCursor)
+            myline = myline.replace("0x", "")
+            faltam = 3 - len(myline)
+            for i in range(faltam):
+                myline = "0" + myline
+            start = start + myline + str(" : ") + mystr[2]
+            self.lineCursor += 1
+        start = start + str("END")
+        new_file.writelines(start)
+        new_file.close()
+
     def writeToFile(self, assembled):
         new_name = "assembled_" + str(self.filename)
+        self.new = new_name
         new_file = open(new_name, "w")
         new_file.writelines(assembled)
         new_file.close()
 
 if __name__ == '__main__':
-    argparse = argparse.ArgumentParser()
-    argparse.add_argument('in_file', type=str)
-    args = argparse.parse_args()
-
-    filename = args.in_file
+    # argparse = argparse.ArgumentParser()
+    # argparse.add_argument('in_file', type=str)
+    # args = argparse.parse_args()
+    filename = "codigoRom.txt"
     assemble = Assembler(filename)
     assemble.readFile()
-
-
+    assemble.makeMIF()

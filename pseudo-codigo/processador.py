@@ -19,7 +19,7 @@ def topLevel():
     """
     tempo = 0
 
-    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 1, 2, 5, 9, 5, 6 
+    horasD, horasU, minutosD, minutosU, segundosD, segundosU = 0, 9, 5, 9, 5, 6 
     timeofday = {True: 'am', False:'pm'}
     ampm = True
 
@@ -55,22 +55,19 @@ def topLevel():
                         else: 
                             minutosD = 0
 
-                            if (horasU < 9 and horasD == 0):
+                            if (horasU < 9 and horasD <= 1):
                                 horasU += 1
                                 
                             else:
-
-                                if(horasD == 0):
+                                if (horasD <= 1):
+                                    horasD += 1 
                                     horasU = 0
-                                    horasD += 1
-
-                                if(horasU < 2):
+                                else:
                                     horasU += 1
 
-                                else:
-                                    ampm = not(ampm)
+                                if(horasU == 4):
                                     horasD = 0
-                                    horasU = 1
+                                    horasU = 0
                                             
 
             t0 = t1

@@ -1,3 +1,4 @@
+:begin
 lea $segU, 0x6
 store $segU, 0x0
 lea $segD, 0x5
@@ -6,13 +7,13 @@ lea $minU, 0x9
 store $minU, 0x2
 lea $minD, 0x5
 store $minD, 0x3
-lea $horU, 0x2
+lea $horU, 0x3
 store $horU, 0x4
-lea $horD, 0x1
+lea $horD, 0x2
 store $horD, 0x5
 
 lea $R1, 0x1
-lea $R2, 0x2
+lea $R2, 0x4
 lea $R9, 0x9
 lea $R5, 0x5
 lea $RM, 0x0
@@ -23,70 +24,72 @@ load $RT, 0x7
 je $RT, $R0, :BuscaTempo
 store $RT, 0x6
 
-jl $R9, $segU, :LOOP2
+jl $segU, $R9, :1
 mov $segU, $R0
 store $segU, 0x0
 
-jl $segD, $R0, :LOOP3
+jl $segD, $R5, :2
 mov $segD, $R0
 store $segD, 0x1
 
-jl $R9, $minU, :LOOP9
+jl $minU, $R9, :3
 mov $minU, $R0
-
-:LOOP8
 store $minU, 0x2
-jl $R5, $minD, :BuscaTempo
+
+jl $minD, $R5, :4
 mov $minD, $R0
 store $minD, 0x3
 
-jl $R9, $horU, :LOOP6
-je $horD, $R0, :LOOP5
-jl $R2, $horU, :LOOP4
-inv $RM
-mov $horD, $R0
-store $horD, 0x5
-mov $horU, $R1
-store $horU, 0x4
-jmp :BuscaTempo
+jl $horU, $R9, :check1
+:check
 
-:LOOP4
+jle $horD, $R1, :5
 inc $horU
 store $horU, 0x4
+
+je $horU, $R2, :6
 jmp :BuscaTempo
 
-:LOOP5
+:6
 mov $horU, $R0
 store $horU, 0x4
-inc $horD
 
-:LOOP7
+mov $horD, $R0
 store $horD, 0x5
+
+:5
+inc $horD
+store $horD, 0x5
+
+mov $horU, $R0
+store $horU, 0x4
+
 jmp :BuscaTempo
 
-:LOOP6
-je $horD, $R0, :LOOP7
-jmp :LOOP8
+:check1
+jle $horD, $R1, :check2
+jmp :check
+
+:check2
 inc $horU
 store $horU, 0x4
-jmp :BuscaTempo
 
-:BucaTempo0
+:4
 inc $minD
 store $minD, 0x3
 jmp :BuscaTempo
 
-:LOOP9
+:3
 inc $minU
 store $minU, 0x2
 jmp :BuscaTempo
 
-:LOOP3
+:2
 inc $segD
 store $segD, 0x1
 jmp :BuscaTempo
 
-:LOOP2
+:1
 inc $segU
 store $segU, 0x0
 jmp :BuscaTempo

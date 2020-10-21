@@ -1,5 +1,14 @@
-lea $R1, 0x0
-jmp :LOOP
-add $R1, $R2, $segD
-:LOOP
-lea $R1, 0x0
+:BEGIN
+lea $R0, 0x0
+lea $segU, 0x1
+store $segU, 0x0
+
+:BuscaTempo
+load $RT, 0x7
+je $RT, $R0, :BuscaTempo
+
+store $RT, 0x6
+inc $segU
+store $segU, 0x0
+
+jmp :BuscaTempo
