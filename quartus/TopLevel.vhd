@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity TopLevel is
     port(
-        SW  : in STD_LOGIC_VECTOR(4 downto 0); -- Usaremos 5 switches
+        SW  : in STD_LOGIC_VECTOR(7 downto 0); -- Usaremos 8 switches
         KEY : in STD_LOGIC_VECTOR(3 downto 0); -- Usaremos os 4 botões
         CLOCK_50 : in STD_LOGIC;               -- Clock 50 MHz
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0);
@@ -39,10 +39,15 @@ architecture funcionamento of TopLevel is
     signal hab_key     : STD_LOGIC_VECTOR(3 downto 0);
 
     signal tictac_zera, tictac_leitura  : std_logic;
+    signal tictac_zera_fast, tictac_leitura_fast  : std_logic;
 
     signal progC : std_logic_vector(7 downto 0);
 
     signal habEscritaMEM, habLeituraMEM : std_logic;
+
+    signal enabSW : std_logic;
+    signal enabbut : std_logic;
+    
     begin
         
         dataout <= barramentoDadosSaida;
@@ -67,11 +72,17 @@ architecture funcionamento of TopLevel is
 
         -- Base de Tempo
         -- A cada 1 segundo avisa que passou o segundo, mudando o sinal de saida `tic_tac`
-        TICTAC :  entity work.divisorGenerico_e_Interface generic map (divisor => 2500000)   -- divide por 10.
-                                           port map (clk => CLOCK_50,
-                                                     habilitaLeitura => tictac_leitura,
-                                                     limpaLeitura => tictac_zera,
-                                                     leituraUmSegundo => barramentoDadosEntrada);
+        TICTAC      :  entity work.divisorGenerico_e_Interface generic map (divisor => 25000000)   
+                                                          port map (clk => CLOCK_50,
+                                                                    habilitaLeitura => tictac_leitura,
+                                                                    limpaLeitura => tictac_zera,
+                                                                    leituraUmSegundo => barramentoDadosEntrada);
+
+        TICTAC_fast :  entity work.divisorGenerico_e_Interface_fast generic map (divisor => 250000)   
+                                                          port map (clk => CLOCK_50,
+                                                                    habilitaLeitura => tictac_leitura_fast,
+                                                                    limpaLeitura => tictac_zera_fast,
+                                                                    leituraUmSegundo => barramentoDadosEntrada);
 
 
         -- Periféricos
@@ -140,12 +151,26 @@ architecture funcionamento of TopLevel is
         showHEX2 : entity work.conversorHex7seg port map(dadoHex => seg7Input2, saida7seg => HEX2);
         showHEX3 : entity work.conversorHex7seg port map(dadoHex => seg7Input3, saida7seg => HEX3);                                            
         showHEX4 : entity work.conversorHex7seg port map(dadoHex => seg7Input4, saida7seg => HEX4);
-        showHEX5 : entity work.conversorHex7seg port map(dadoHex => seg7Input5, saida7seg => HEX5);                                                 
+        showHEX5 : entity work.conversorHex7seg port map(dadoHex => seg7Input5, saida7seg => HEX5);     
+        
+        swicthes : entity work.sw port map (sw => SW,
+                                            habilitaUC => habLeituraMEM,
+                                            habilitaDC => enabSW,
+                                            dataout => barramentoDadosEntrada);
+
+        but      : entity work.but port map (buts => not(KEY),
+                                            habilitaUC => habLeituraMEM,
+                                            habilitaDC => enabbut,
+                                            dataout => barramentoDadosEntrada);
 
         DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
                                                      habilitaHex => habilitaHex,
+                                                     enableSW => enabSW,
+                                                     enableBut=> enabbut,
                                                      tictac_leitura => tictac_leitura,
-                                                     tictac_zera => tictac_zera);
+                                                     tictac_zera => tictac_zera,
+                                                     tictac_leitura_fast => tictac_leitura_fast,
+                                                     tictac_zera_fast => tictac_zera_fast);
 
         
         
