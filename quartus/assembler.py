@@ -66,15 +66,12 @@ class Assembler(object):
             new_line += self.famousEnd['0x0']
             
         elif (comando[0] == 'jmp'): #Done
-            # jmp 0x2 -> "0000000010"
             new_line += self.instructions[comando[0]]
             new_line += self.registers['R0']
             new_line += self.registers['R0']
             new_line += self.registers['R0']
-            # print(self.label)
-            # print(self.label)
-            end = "0x"+ str(self.label[comando[1]])
-            res = self.hexTo10bits(end)
+            end = str(self.label[comando[1]])
+            res = self.decTo10bits(end)
 
             new_line += str(res)
             
@@ -83,8 +80,8 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers[comando[2]]
             new_line += self.registers[comando[1]]
-            end = "0x"+ str(self.label[comando[3]])
-            res = self.hexTo10bits(end)
+            end = str(self.label[comando[3]])
+            res = self.decTo10bits(end)
             new_line += str(res) # End
             
         elif (comando[0] == 'je'):
@@ -92,8 +89,8 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers[comando[2]]
             new_line += self.registers[comando[1]]
-            end = "0x"+ str(self.label[comando[3]])
-            res = self.hexTo10bits(end)
+            end = str(self.label[comando[3]])
+            res = self.decTo10bits(end)
             new_line += str(res)
 
         elif (comando[0] == 'jl'): #Done
@@ -102,8 +99,8 @@ class Assembler(object):
             new_line += self.registers['R0']
             new_line += self.registers[comando[2]]
             new_line += self.registers[comando[1]]
-            end = "0x"+ str(self.label[comando[3]])
-            res = self.hexTo10bits(end)
+            end = str(self.label[comando[3]])
+            res = self.decTo10bits(end)
             new_line += str(res) # end
 
         elif (comando[0] == 'lea'):
@@ -169,10 +166,20 @@ class Assembler(object):
         return new_line
         
     def hexTo10bits(self, end):
-
         n = int(end, 16)  # end = 0x7
         bStr = '' 
         while n > 0: 
+            bStr = str(n % 2) + bStr 
+            n = n >> 1    
+        res = str(bStr) # 111
+        faltam = 8 - len(res)
+        res = faltam*'0' + str(bStr)
+        return res
+    
+    def decTo10bits(self, end):
+        n = int(end)
+        bStr = ''
+        while (n > 0): 
             bStr = str(n % 2) + bStr 
             n = n >> 1    
         res = str(bStr) # 111
