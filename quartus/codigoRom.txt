@@ -1,19 +1,14 @@
 :begin
 lea $segU, 0x6
 store $segU, 0x0
-
 lea $segD, 0x5
 store $segD, 0x1
-
 lea $minU, 0x9
 store $minU, 0x2
-
 lea $minD, 0x5
 store $minD, 0x3
-
 lea $horU, 0x1
 store $horU, 0x4
-
 lea $horD, 0x1
 store $horD, 0x5
 
@@ -25,115 +20,82 @@ lea $RM, 0x0
 lea $R0, 0x0
 
 :BuscaTempo
-    load $RT, 0x7
-    je $RT, $R0, :BuscaTempo
-    store $RT, 0x6
+load $RT, 0x7
+je $RT, $R0, :BuscaTempo
+store $RT, 0x6
 
-:incSegU
-    je $segU, $R9, :incSegD
-    inc $segU
-    store $segU, 0x0
-    
-    jmp :BuscaTempo
-    
-    
-:incSegD
-    je $segD, $R5, :incMinU
-    inc $segD
-    store $segD, 0x1
-    
-    lea $segU, 0x0
-    store $segU, 0x0
-    
-    jmp :BuscaTempo
-    
-:incMinU
-    je $minU, $R9, :incMinD
-    inc $minU
-    store $minU, 0x2
-    
-    lea $segD, 0x0
-    store $segD, 0x1
-    
-    lea $segU, 0x0
-    store $segU, 0x0
-    
-    jmp :BuscaTempo
+jl $segU, $R9, :1
+mov $segU, $R0
+store $segU, 0x0
 
-:incMinD
-    je $minD, $R5, :incHorUampm
-    inc $minD
-    store $minD, 0x3
+jl $segD, $R5, :2
+mov $segD, $R0
+store $segD, 0x1
 
-    lea $segU, 0x0
-    store $segU, 0x0
-    
-    lea $segD, 0x0
-    store $segD, 0x1
-    
-    lea $minU, 0x0
-    store $minU, 0x2
-    jmp :BuscaTempo
+jl $minU, $R9, :3
+mov $minU, $R0
+store $minU, 0x2
 
-:incHorUampm
-    je $horU, $R2, :checa_horD=0
-:volta
-    je $horU, $R9, :incHorDampm
-    inc $horU
-    store $horU, 0x4
+jl $minD, $R5, :4
+mov $minD, $R0
+store $minD, 0x3
 
-    lea $segU, 0x0
-    store $segU, 0x0
-    lea $segD, 0x0
-    store $segD, 0x1
-    lea $minU, 0x0
-    store $minU, 0x2
-    lea $minD, 0x0
-    store $minD, 0x3
-    jmp :BuscaTempo
+jl $horU, $R9, :check1
 
-:checa_horD=0
-    je $horD, $R0, :volta
-    jmp :resetAmPm
+inc $horD
+store $horD, 0x5
 
+mov $horU, $R0
+store $horU, 0x4
+jmp :BuscaTempo
 
-:incHorDampm
-    inc $horD
-    store $horD, 0x5
-    
-    lea $segU, 0x0
-    store $segU, 0x0
-    
-    lea $segD, 0x0
-    store $segD, 0x1
-    
-    lea $minU, 0x0
-    store $minU, 0x2
+:check1
+je $horD, $R1, :check2
+jmp :check3
 
-    lea $minD, 0x0
-    store $minD, 0x3
-    
-    lea $horU, 0x0
-    store $horU, 0x4
-    
-    jmp :BuscaTempo
+:check2
+je $horU, $R2, :resetAmPm
+:check3
+inc $horU
+store $horU, 0x4
+jmp :BuscaTempo
+
+:4
+inc $minD
+store $minD, 0x3
+jmp :BuscaTempo
+
+:3
+inc $minU
+store $minU, 0x2
+jmp :BuscaTempo
+
+:2
+inc $segD
+store $segD, 0x1
+jmp :BuscaTempo
+
+:1
+inc $segU
+store $segU, 0x0
+jmp :BuscaTempo
 
 :resetAmPm
-    lea $segU, 0x0
-    store $segU, 0x0
+lea $segU, 0x0
+store $segU, 0x0
 
-    lea $segD, 0x0
-    store $segD, 0x1
+lea $segD, 0x0
+store $segD, 0x1
 
-    lea $minU, 0x0
-    store $minU, 0x2
+lea $minU, 0x0
+store $minU, 0x2
 
-    lea $minD, 0x0
-    store $minD, 0x3
+lea $minD, 0x0
+store $minD, 0x3
 
-    lea $horU, 0x1
-    store $horU, 0x4
+lea $horU, 0x1
+store $horU, 0x4
 
-    lea $horD, 0x0
-    store $horD, 0x5
-    jmp :BuscaTempo
+lea $horD, 0x0
+store $horD, 0x5
+jmp :BuscaTempo
