@@ -10,7 +10,8 @@ class Assembler(object):
         self.lineCursor = 0
         self.registers = {'R0': '0000', 'segU' : '0001', 'segD' : '0010', 'minU': '0011', 'minD' : '0100', 
                  'horU': '0101', 'horD': '0110', 'R1': '0111', 'R2': '1000', 'R9': '1001', 'R5': '1010',
-                 'RM' : '1011', 'RT': '1111', 'imediato_nop': '0000000000'}
+                 'RM' : '1011', 'RT': '1111', 'RT': '1100', 'RF': '1101', 'Rsw': '1110', 'Rbt': '1111',
+                 'imediato_nop': '0000000000'}
         self.instructions = {'lea': '0000', 'mov': '0001', 'add': '0010', 'sub': '0011', 'inc': '0100',
                             'je': '0101', 'jl': '0110', 'jle': '0111', 'jmp': '1000', 'nop': '1001',
                              'inv': '1010', 'load': '1011','store': '1100'}

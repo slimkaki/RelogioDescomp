@@ -392,6 +392,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "barEndSaida[7]",
+					"strict" : false
+				},
+				{
 					"name" : "tic_r",
 					"strict" : false
 				},

@@ -45,7 +45,10 @@ package constants is
     constant R5   :  reg_t := "1010";  -- 0x5
 
     constant RM   :  reg_t := "1011";  -- am
-    constant RT   :  reg_t := "1111";  -- am
+    constant RT   :  reg_t := "1100";  -- base de tempo
+    constant RF   :  reg_t := "1101";  -- base de tempo fast
+    constant Rsw  :  reg_t := "1110";  -- switches
+    constant Rbt  :  reg_t := "1111";  -- buts
 
 
     -- imediatos notaveis
