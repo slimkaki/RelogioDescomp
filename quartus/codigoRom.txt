@@ -10,18 +10,22 @@ store $minU, 0x2
 lea $minD, 0x5
 store $minD, 0x3
 
-lea $horU, 0x1
+lea $horU, 0x2
 store $horU, 0x4
 
 lea $horD, 0x1
 store $horD, 0x5
 
+lea $R0, 0x0
 lea $R1, 0x1
 lea $R2, 0x2
-lea $RM, 0x0
-lea $R0, 0x0
 lea $R5, 0x5
 lea $R9, 0x9
+lea $RM, 0x0
+store $RM, 0xc
+
+
+jmp :desligaLED
 
 :Procura_but_e_sw
     load $Rsw, 0x8
@@ -136,8 +140,7 @@ lea $R9, 0x9
     jmp :Procura_but_e_sw
 
 :resetAmPm
-    inv $RM
-
+    
     lea $segU, 0x0
     store $segU, 0x0
 
@@ -155,6 +158,10 @@ lea $R9, 0x9
 
     lea $horD, 0x0
     store $horD, 0x5
+
+    inv $RM
+    store $RM, 0xc
+
     jmp :Procura_but_e_sw
 
 :onReleaseU

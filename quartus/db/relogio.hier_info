@@ -20,6 +20,7 @@ CLOCK_50 => registradorgenerico_write:MINU.CLK
 CLOCK_50 => registradorgenerico_write:MIND.CLK
 CLOCK_50 => registradorgenerico_write:HORU.CLK
 CLOCK_50 => registradorgenerico_write:HORD.CLK
+CLOCK_50 => registradorgenerico_write:ledReg.CLK
 HEX0[0] << conversorhex7seg:showHEX0.saida7seg[0]
 HEX0[1] << conversorhex7seg:showHEX0.saida7seg[1]
 HEX0[2] << conversorhex7seg:showHEX0.saida7seg[2]
@@ -62,14 +63,16 @@ HEX5[3] << conversorhex7seg:showHEX5.saida7seg[3]
 HEX5[4] << conversorhex7seg:showHEX5.saida7seg[4]
 HEX5[5] << conversorhex7seg:showHEX5.saida7seg[5]
 HEX5[6] << conversorhex7seg:showHEX5.saida7seg[6]
-LEDR[0] << cpu:Processador.pc[0]
-LEDR[1] << cpu:Processador.pc[1]
-LEDR[2] << cpu:Processador.pc[2]
-LEDR[3] << cpu:Processador.pc[3]
-LEDR[4] << cpu:Processador.pc[4]
-LEDR[5] << cpu:Processador.pc[5]
-LEDR[6] << cpu:Processador.pc[6]
-LEDR[7] << cpu:Processador.pc[7]
+LEDR[0] << leds:writeLED.saidaLED[0]
+LEDR[1] << leds:writeLED.saidaLED[1]
+LEDR[2] << leds:writeLED.saidaLED[2]
+LEDR[3] << leds:writeLED.saidaLED[3]
+LEDR[4] << leds:writeLED.saidaLED[4]
+LEDR[5] << leds:writeLED.saidaLED[5]
+LEDR[6] << leds:writeLED.saidaLED[6]
+LEDR[7] << leds:writeLED.saidaLED[7]
+LEDR[8] << leds:writeLED.saidaLED[8]
+LEDR[9] << leds:writeLED.saidaLED[9]
 entrada_A[0] << cpu:Processador.entrada_A[0]
 entrada_A[1] << cpu:Processador.entrada_A[1]
 entrada_A[2] << cpu:Processador.entrada_A[2]
@@ -1398,6 +1401,72 @@ saida7seg[5] <= preOutput.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[6] <= preOutput.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|TopLevel|registradorGenerico_WRITE:ledReg
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => process_0.IN0
+CLK => DOUT[0]~reg0.CLK
+CLK => DOUT[1]~reg0.CLK
+CLK => DOUT[2]~reg0.CLK
+CLK => DOUT[3]~reg0.CLK
+CLK => DOUT[4]~reg0.CLK
+CLK => DOUT[5]~reg0.CLK
+CLK => DOUT[6]~reg0.CLK
+CLK => DOUT[7]~reg0.CLK
+RST => DOUT[0]~reg0.ACLR
+RST => DOUT[1]~reg0.ACLR
+RST => DOUT[2]~reg0.ACLR
+RST => DOUT[3]~reg0.ACLR
+RST => DOUT[4]~reg0.ACLR
+RST => DOUT[5]~reg0.ACLR
+RST => DOUT[6]~reg0.ACLR
+RST => DOUT[7]~reg0.ACLR
+WR => process_0.IN1
+
+
+|TopLevel|leds:writeLED
+inLED[0] => Equal0.IN7
+inLED[0] => Equal1.IN7
+inLED[1] => Equal0.IN6
+inLED[1] => Equal1.IN6
+inLED[2] => Equal0.IN5
+inLED[2] => Equal1.IN5
+inLED[3] => Equal0.IN4
+inLED[3] => Equal1.IN4
+inLED[4] => Equal0.IN3
+inLED[4] => Equal1.IN3
+inLED[5] => Equal0.IN2
+inLED[5] => Equal1.IN2
+inLED[6] => Equal0.IN1
+inLED[6] => Equal1.IN1
+inLED[7] => Equal0.IN0
+inLED[7] => Equal1.IN0
+saidaLED[0] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[1] <= saidaLED.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[3] <= saidaLED.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[4] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[5] <= saidaLED.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[6] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[7] <= saidaLED.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[8] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saidaLED[9] <= saidaLED.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |TopLevel|sw:swicthes
 sw[0] => dataout[0].DATAIN
 sw[1] => dataout[1].DATAIN
@@ -1449,6 +1518,7 @@ addr[0] => Equal8.IN6
 addr[0] => Equal9.IN7
 addr[0] => Equal10.IN5
 addr[0] => Equal11.IN7
+addr[0] => Equal12.IN5
 addr[1] => Equal0.IN5
 addr[1] => Equal1.IN5
 addr[1] => Equal2.IN6
@@ -1461,6 +1531,7 @@ addr[1] => Equal8.IN5
 addr[1] => Equal9.IN5
 addr[1] => Equal10.IN7
 addr[1] => Equal11.IN6
+addr[1] => Equal12.IN4
 addr[2] => Equal0.IN6
 addr[2] => Equal1.IN7
 addr[2] => Equal2.IN5
@@ -1473,6 +1544,7 @@ addr[2] => Equal8.IN4
 addr[2] => Equal9.IN4
 addr[2] => Equal10.IN4
 addr[2] => Equal11.IN4
+addr[2] => Equal12.IN7
 addr[3] => Equal0.IN4
 addr[3] => Equal1.IN4
 addr[3] => Equal2.IN4
@@ -1485,6 +1557,7 @@ addr[3] => Equal8.IN7
 addr[3] => Equal9.IN6
 addr[3] => Equal10.IN6
 addr[3] => Equal11.IN5
+addr[3] => Equal12.IN6
 addr[4] => Equal0.IN3
 addr[4] => Equal1.IN3
 addr[4] => Equal2.IN3
@@ -1497,6 +1570,7 @@ addr[4] => Equal8.IN3
 addr[4] => Equal9.IN3
 addr[4] => Equal10.IN3
 addr[4] => Equal11.IN3
+addr[4] => Equal12.IN3
 addr[5] => Equal0.IN2
 addr[5] => Equal1.IN2
 addr[5] => Equal2.IN2
@@ -1509,6 +1583,7 @@ addr[5] => Equal8.IN2
 addr[5] => Equal9.IN2
 addr[5] => Equal10.IN2
 addr[5] => Equal11.IN2
+addr[5] => Equal12.IN2
 addr[6] => Equal0.IN1
 addr[6] => Equal1.IN1
 addr[6] => Equal2.IN1
@@ -1521,6 +1596,7 @@ addr[6] => Equal8.IN1
 addr[6] => Equal9.IN1
 addr[6] => Equal10.IN1
 addr[6] => Equal11.IN1
+addr[6] => Equal12.IN1
 addr[7] => Equal0.IN0
 addr[7] => Equal1.IN0
 addr[7] => Equal2.IN0
@@ -1533,6 +1609,7 @@ addr[7] => Equal8.IN0
 addr[7] => Equal9.IN0
 addr[7] => Equal10.IN0
 addr[7] => Equal11.IN0
+addr[7] => Equal12.IN0
 habilitaHex[0] <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
 habilitaHex[1] <= habilitaHex.DB_MAX_OUTPUT_PORT_TYPE
 habilitaHex[2] <= habilitaHex.DB_MAX_OUTPUT_PORT_TYPE
@@ -1545,5 +1622,6 @@ tictac_leitura <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
 tictac_zera <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
 tictac_leitura_fast <= Equal10.DB_MAX_OUTPUT_PORT_TYPE
 tictac_zera_fast <= Equal9.DB_MAX_OUTPUT_PORT_TYPE
+enableLed <= Equal12.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -19,7 +19,9 @@ entity decodificador is
         tictac_zera : out std_logic;
 
         tictac_leitura_fast : out std_logic;
-        tictac_zera_fast : out std_logic
+        tictac_zera_fast : out std_logic;
+
+        enableLed : out std_logic
 
 
     );
@@ -40,17 +42,18 @@ architecture comportamento of decodificador is
                        "000000";
 
         
-        tictac_zera    <= '1' WHEN addr = "00000110" else '0';
+        tictac_zera          <= '1' WHEN addr = "00000110" else '0';
         
-        tictac_leitura    <= '1' WHEN addr = "00000111" else '0';
+        tictac_leitura       <= '1' WHEN addr = "00000111" else '0';
         
-        enableSW <= '1' WHEN addr = "00001000" else '0';
+        enableSW             <= '1' WHEN addr = "00001000" else '0';
 
-        tictac_zera_fast    <= '1' WHEN addr = "00001001" else '0';
+        tictac_zera_fast     <= '1' WHEN addr = "00001001" else '0';
         
-        tictac_leitura_fast    <= '1' WHEN addr = "00001010" else '0';
+        tictac_leitura_fast  <= '1' WHEN addr = "00001010" else '0';
 
-        enableBut <= '1' WHEN addr = "00001011" else '0';
+        enableBut            <= '1' WHEN addr = "00001011" else '0';
 
+        enableLed            <= '1' WHEN addr = "00001100" else '0';
 
 end architecture;

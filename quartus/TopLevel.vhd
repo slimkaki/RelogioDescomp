@@ -8,7 +8,7 @@ entity TopLevel is
         KEY : in STD_LOGIC_VECTOR(3 downto 0); -- Usaremos os 4 botões
         CLOCK_50 : in STD_LOGIC;               -- Clock 50 MHz
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0);
-        LEDR : out STD_LOGIC_VECTOR(7 downto 0); -- Por fim, teremos os 10 LEDs
+        LEDR : out STD_LOGIC_VECTOR(9 downto 0); -- Por fim, teremos os 10 LEDs
 
         entrada_A			:   out STD_LOGIC_VECTOR(7 downto 0);
         entrada_B			:   out STD_LOGIC_VECTOR(7 downto 0);
@@ -47,6 +47,8 @@ architecture funcionamento of TopLevel is
 
     signal enabSW : std_logic;
     signal enabbut : std_logic;
+    signal enableLeds : std_logic;
+    signal outLED : std_logic_vector(7 downto 0);
     
     begin
         
@@ -84,17 +86,6 @@ architecture funcionamento of TopLevel is
                                                                     limpaLeitura => tictac_zera_fast,
                                                                     leituraUmSegundo => barramentoDadosEntrada);
 
-
-        -- Periféricos
-        -- IO : entity work.IO_TIMER port map (clk  => CLOCK_50,
-        --                                     HEX0 => HEX0, 
-        --                                     HEX1 => HEX1, 
-        --                                     HEX2 => HEX2, 
-        --                                     HEX3 => HEX3, 
-        --                                     HEX4 => HEX4, 
-        --                                     HEX5 => HEX5);
-
-        LEDR <= progC;
 
 		SEGU : entity work.registradorGenerico_WRITE generic map (larguraDados => 4) 
                                                port map (DIN     => barramentoDadosSaida(3 downto 0),
@@ -151,7 +142,18 @@ architecture funcionamento of TopLevel is
         showHEX2 : entity work.conversorHex7seg port map(dadoHex => seg7Input2, saida7seg => HEX2);
         showHEX3 : entity work.conversorHex7seg port map(dadoHex => seg7Input3, saida7seg => HEX3);                                            
         showHEX4 : entity work.conversorHex7seg port map(dadoHex => seg7Input4, saida7seg => HEX4);
-        showHEX5 : entity work.conversorHex7seg port map(dadoHex => seg7Input5, saida7seg => HEX5);     
+        showHEX5 : entity work.conversorHex7seg port map(dadoHex => seg7Input5, saida7seg => HEX5); 
+        
+        
+        ledReg   : entity work.registradorGenerico_WRITE generic map (larguraDados => 8)
+                                                         port map (DIN     => barramentoDadosSaida(7 downto 0),
+                                                                   DOUT    => outLED,
+                                                                   ENABLE  => enableLeds,
+                                                                   CLK     => CLOCK_50,
+                                                                   RST     => '0',
+                                                                   WR => habEscritaMEM);
+
+        writeLED : entity work.leds port map(inLED => outLED, saidaLED => LEDR);     
         
         swicthes : entity work.sw port map (sw => SW,
                                             habilitaUC => habLeituraMEM,
@@ -163,14 +165,15 @@ architecture funcionamento of TopLevel is
                                             habilitaDC => enabbut,
                                             dataout => barramentoDadosEntrada);
 
-        DECODER : entity work.decodificador port map(addr => barramentoEndSaida,
+        DECODER  : entity work.decodificador port map(addr => barramentoEndSaida,
                                                      habilitaHex => habilitaHex,
                                                      enableSW => enabSW,
                                                      enableBut=> enabbut,
                                                      tictac_leitura => tictac_leitura,
                                                      tictac_zera => tictac_zera,
                                                      tictac_leitura_fast => tictac_leitura_fast,
-                                                     tictac_zera_fast => tictac_zera_fast);
+                                                     tictac_zera_fast => tictac_zera_fast,
+                                                     enableLed => enableLeds);
 
         
         
