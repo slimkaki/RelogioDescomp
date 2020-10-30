@@ -1,0 +1,186 @@
+lea $segU, 0x6
+store $segU, 0x0
+
+lea $segD, 0x5
+store $segD, 0x1
+
+lea $minU, 0x9
+store $minU, 0x2
+
+lea $minD, 0x5
+store $minD, 0x3
+
+lea $horU, 0x0
+store $horU, 0x4
+
+lea $horD, 0x1
+store $horD, 0x5
+
+lea $R0, 0x0
+lea $R1, 0x1
+lea $R2, 0x2
+lea $R5, 0x5
+lea $R9, 0x9
+lea $RM, 0x0
+store $RM, 0xc
+
+
+:Procura_but_e_sw
+    load $Rsw, 0x8
+    load $Rbt, 0xb
+
+    je $Rbt, $R1, :onReleaseU
+    je $Rbt, $R2, :onReleaseD
+
+    je $Rsw, $R1, :BuscaTempo
+
+:BuscaTempoFast
+    load $RT, 0xa
+    je $RT, $R0, :BuscaTempoFast
+    store $RT, 0x9
+    jmp :incSegU
+
+:BuscaTempo
+    load $RT, 0x7
+    je $RT, $R0, :BuscaTempo
+    store $RT, 0x6
+
+:incSegU
+    je $segU, $R9, :incSegD
+    inc $segU
+    store $segU, 0x0
+    
+    jmp :Procura_but_e_sw
+    
+    
+:incSegD
+    je $segD, $R5, :incMinU
+    inc $segD
+    store $segD, 0x1
+    
+    lea $segU, 0x0
+    store $segU, 0x0
+    
+    jmp :Procura_but_e_sw
+    
+:incMinU
+    je $minU, $R9, :incMinD
+    inc $minU
+    store $minU, 0x2
+    
+    lea $segD, 0x0
+    store $segD, 0x1
+    
+    lea $segU, 0x0
+    store $segU, 0x0
+    
+    jmp :Procura_but_e_sw
+
+:incMinD
+    je $minD, $R5, :incHorUampm
+    inc $minD
+    store $minD, 0x3
+
+    lea $segU, 0x0
+    store $segU, 0x0
+    
+    lea $segD, 0x0
+    store $segD, 0x1
+    
+    lea $minU, 0x0
+    store $minU, 0x2
+    jmp :Procura_but_e_sw
+
+:incHorUampm
+    je $horU, $R2, :checa_horD=0
+    je $horU, $R1, :checa_AMPM
+:volta
+    je $horU, $R9, :incHorDampm
+    inc $horU
+    store $horU, 0x4
+
+    lea $segU, 0x0
+    store $segU, 0x0
+    
+    lea $segD, 0x0
+    store $segD, 0x1
+    
+    lea $minU, 0x0
+    store $minU, 0x2
+
+    lea $minD, 0x0
+    store $minD, 0x3
+    
+    jmp :Procura_but_e_sw
+
+:checa_horD=0
+    je $horD, $R0, :volta
+    jmp :resetAmPm
+    
+:checa_AMPM
+	je $horD, $R1, :AMPM
+	jmp :volta
+	
+:AMPM
+	je $RM, $R1, :vira_zero
+    lea $RM, 0x1
+    store $RM, 0xc
+    jmp :volta
+    
+:vira_zero
+    lea $RM, 0x0
+    store $RM, 0xc
+    jmp :volta
+
+:incHorDampm
+    inc $horD
+    store $horD, 0x5
+    
+    lea $segU, 0x0
+    store $segU, 0x0
+    
+    lea $segD, 0x0
+    store $segD, 0x1
+    
+    lea $minU, 0x0
+    store $minU, 0x2
+
+    lea $minD, 0x0
+    store $minD, 0x3
+    
+    lea $horU, 0x0
+    store $horU, 0x4
+    
+    jmp :Procura_but_e_sw
+
+:resetAmPm
+    
+    lea $segU, 0x0
+    store $segU, 0x0
+
+    lea $segD, 0x0
+    store $segD, 0x1
+
+    lea $minU, 0x0
+    store $minU, 0x2
+
+    lea $minD, 0x0
+    store $minD, 0x3
+
+    lea $horU, 0x1
+    store $horU, 0x4
+
+    lea $horD, 0x0
+    store $horD, 0x5
+	jmp :Procura_but_e_sw
+	    
+
+:onReleaseU
+    load $Rbt, 0xb
+    je $Rbt, $R0, :incMinU
+    jmp :onReleaseU
+
+:onReleaseD
+    load $Rbt, 0xb
+    je $Rbt, $R0, :incMinD
+    jmp :onReleaseD
