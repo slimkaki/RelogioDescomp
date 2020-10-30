@@ -25,8 +25,6 @@ lea $RM, 0x0
 store $RM, 0xc
 
 
-jmp :desligaLED
-
 :Procura_but_e_sw
     load $Rsw, 0x8
     load $Rbt, 0xb
@@ -158,11 +156,18 @@ jmp :desligaLED
 
     lea $horD, 0x0
     store $horD, 0x5
-
-    inv $RM
+	
+	je $RM, $R1, :vira_zero
+    lea $RM, 0x1
     store $RM, 0xc
-
     jmp :Procura_but_e_sw
+    
+:vira_zero
+    lea $RM, 0x0
+    store $RM, 0xc
+    jmp :Procura_but_e_sw
+
+    
 
 :onReleaseU
     load $Rbt, 0xb

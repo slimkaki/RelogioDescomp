@@ -276,38 +276,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "saida_ULA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "saida_ULA[7]",
-					"strict" : false
-				},
-				{
 					"name" : "tictic[0]",
 					"strict" : false
 				},
@@ -448,11 +416,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{

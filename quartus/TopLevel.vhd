@@ -49,6 +49,7 @@ architecture funcionamento of TopLevel is
     signal enabbut : std_logic;
     signal enableLeds : std_logic;
     signal outLED : std_logic_vector(7 downto 0);
+	 signal ULA_saida : std_logic_vector(7 downto 0);
     
     begin
         
@@ -67,7 +68,7 @@ architecture funcionamento of TopLevel is
                                                barramentoEndSaida     => barramentoEndSaida,
                                                entrada_A => entrada_A,
                                                entrada_B => entrada_B,
-                                               saida_ULA => saida_ULA,
+                                               saida_ULA => ULA_saida,
                                                pc => progC,
                                                habLeituraMEM => habLeituraMEM,
                                                habEscritaMEM => habEscritaMEM);
@@ -146,7 +147,7 @@ architecture funcionamento of TopLevel is
         
         
         ledReg   : entity work.registradorGenerico_WRITE generic map (larguraDados => 8)
-                                                         port map (DIN     => barramentoDadosSaida(7 downto 0),
+                                                         port map (DIN     => ULA_saida,
                                                                    DOUT    => outLED,
                                                                    ENABLE  => enableLeds,
                                                                    CLK     => CLOCK_50,
