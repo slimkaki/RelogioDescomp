@@ -10,7 +10,7 @@ store $minU, 0x2
 lea $minD, 0x5
 store $minD, 0x3
 
-lea $horU, 0x2
+lea $horU, 0x0
 store $horU, 0x4
 
 lea $horD, 0x1
@@ -93,6 +93,7 @@ store $RM, 0xc
 
 :incHorUampm
     je $horU, $R2, :checa_horD=0
+    je $horU, $R1, :checa_AMPM
 :volta
     je $horU, $R9, :incHorDampm
     inc $horU
@@ -115,6 +116,21 @@ store $RM, 0xc
 :checa_horD=0
     je $horD, $R0, :volta
     jmp :resetAmPm
+    
+:checa_AMPM
+	je $horD, $R1, :AMPM
+	jmp :volta
+	
+:AMPM
+	je $RM, $R1, :vira_zero
+    lea $RM, 0x1
+    store $RM, 0xc
+    jmp :volta
+    
+:vira_zero
+    lea $RM, 0x0
+    store $RM, 0xc
+    jmp :volta
 
 :incHorDampm
     inc $horD
@@ -156,18 +172,8 @@ store $RM, 0xc
 
     lea $horD, 0x0
     store $horD, 0x5
-	
-	je $RM, $R1, :vira_zero
-    lea $RM, 0x1
-    store $RM, 0xc
-    jmp :Procura_but_e_sw
-    
-:vira_zero
-    lea $RM, 0x0
-    store $RM, 0xc
-    jmp :Procura_but_e_sw
-
-    
+	jmp :Procura_but_e_sw
+	    
 
 :onReleaseU
     load $Rbt, 0xb

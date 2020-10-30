@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Thu Oct 29 22:29:01 2020
+Fri Oct 30 00:22:08 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 29 22:29:01 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 30 00:22:08 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogio                                     ;
 ; Top-level Entity Name           ; TopLevel                                    ;
@@ -241,14 +241,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 329            ;
+; Estimate of Logic utilization (ALMs needed) ; 316            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 446            ;
-;     -- 7 input functions                    ; 6              ;
-;     -- 6 input functions                    ; 190            ;
-;     -- 5 input functions                    ; 55             ;
-;     -- 4 input functions                    ; 103            ;
-;     -- <=3 input functions                  ; 92             ;
+; Combinational ALUT usage for logic          ; 420            ;
+;     -- 7 input functions                    ; 5              ;
+;     -- 6 input functions                    ; 191            ;
+;     -- 5 input functions                    ; 51             ;
+;     -- 4 input functions                    ; 101            ;
+;     -- <=3 input functions                  ; 72             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 215            ;
 ;                                             ;                ;
@@ -258,8 +258,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 213            ;
-; Total fan-out                               ; 2979           ;
-; Average fan-out                             ; 3.28           ;
+; Total fan-out                               ; 2896           ;
+; Average fan-out                             ; 3.29           ;
 +---------------------------------------------+----------------+
 
 
@@ -268,40 +268,40 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+----------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name                      ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+----------------------------------+--------------+
-; |TopLevel                                         ; 446 (0)             ; 215 (0)                   ; 0                 ; 0          ; 123  ; 0            ; |TopLevel                                                                                 ; TopLevel                         ; work         ;
-;    |CPU:Processador|                              ; 309 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                                 ; CPU                              ; work         ;
-;       |UnidadeControle:UC|                        ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                              ; UnidadeControle                  ; work         ;
-;       |fluxo_de_dados:FD|                         ; 293 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                               ; fluxo_de_dados                   ; work         ;
-;          |ULA:ULA|                                ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                                       ; ULA                              ; work         ;
-;          |bancoReg:BancoReg|                      ; 104 (104)           ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                             ; bancoReg                         ; work         ;
-;          |fetch:FETCH|                            ; 145 (0)             ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                                   ; fetch                            ; work         ;
-;             |memoriaROM:ROM|                      ; 137 (137)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM                    ; memoriaROM                       ; work         ;
+; |TopLevel                                         ; 420 (0)             ; 215 (0)                   ; 0                 ; 0          ; 123  ; 0            ; |TopLevel                                                                                 ; TopLevel                         ; work         ;
+;    |CPU:Processador|                              ; 284 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador                                                                 ; CPU                              ; work         ;
+;       |UnidadeControle:UC|                        ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|UnidadeControle:UC                                              ; UnidadeControle                  ; work         ;
+;       |fluxo_de_dados:FD|                         ; 271 (0)             ; 136 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD                                               ; fluxo_de_dados                   ; work         ;
+;          |ULA:ULA|                                ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|ULA:ULA                                       ; ULA                              ; work         ;
+;          |bancoReg:BancoReg|                      ; 96 (96)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg                             ; bancoReg                         ; work         ;
+;          |fetch:FETCH|                            ; 130 (0)             ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH                                   ; fetch                            ; work         ;
+;             |memoriaROM:ROM|                      ; 122 (122)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|memoriaROM:ROM                    ; memoriaROM                       ; work         ;
 ;             |registradorGenerico:PC|              ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|registradorGenerico:PC            ; registradorGenerico              ; work         ;
 ;             |somadorGenerico:SOMA|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|fetch:FETCH|somadorGenerico:SOMA              ; somadorGenerico                  ; work         ;
 ;          |muxGenerico2x1:MUX_ULA|                 ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA                        ; muxGenerico2x1                   ; work         ;
-;    |but:but|                                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|but:but                                                                         ; but                              ; work         ;
+;    |but:but|                                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|but:but                                                                         ; but                              ; work         ;
 ;    |conversorHex7seg:showHEX0|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX0                                                       ; conversorHex7seg                 ; work         ;
 ;    |conversorHex7seg:showHEX1|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX1                                                       ; conversorHex7seg                 ; work         ;
 ;    |conversorHex7seg:showHEX2|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX2                                                       ; conversorHex7seg                 ; work         ;
 ;    |conversorHex7seg:showHEX3|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX3                                                       ; conversorHex7seg                 ; work         ;
 ;    |conversorHex7seg:showHEX4|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX4                                                       ; conversorHex7seg                 ; work         ;
 ;    |conversorHex7seg:showHEX5|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|conversorHex7seg:showHEX5                                                       ; conversorHex7seg                 ; work         ;
-;    |decodificador:DECODER|                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|decodificador:DECODER                                                           ; decodificador                    ; work         ;
-;    |divisorGenerico_e_Interface:TICTAC|           ; 46 (13)             ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC                                              ; divisorGenerico_e_Interface      ; work         ;
+;    |decodificador:DECODER|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|decodificador:DECODER                                                           ; decodificador                    ; work         ;
+;    |divisorGenerico_e_Interface:TICTAC|           ; 45 (12)             ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC                                              ; divisorGenerico_e_Interface      ; work         ;
 ;       |divisorGenerico:baseTempo|                 ; 33 (33)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|divisorGenerico:baseTempo                    ; divisorGenerico                  ; work         ;
 ;       |flipflopGenerico:registraUmSegundo|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface:TICTAC|flipflopGenerico:registraUmSegundo           ; flipflopGenerico                 ; work         ;
-;    |divisorGenerico_e_Interface_fast:TICTAC_fast| ; 25 (1)              ; 20 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface_fast:TICTAC_fast                                    ; divisorGenerico_e_Interface_fast ; work         ;
+;    |divisorGenerico_e_Interface_fast:TICTAC_fast| ; 24 (0)              ; 20 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface_fast:TICTAC_fast                                    ; divisorGenerico_e_Interface_fast ; work         ;
 ;       |divisorGenerico:baseTempo|                 ; 24 (24)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface_fast:TICTAC_fast|divisorGenerico:baseTempo          ; divisorGenerico                  ; work         ;
 ;       |flipflopGenerico:registraUmSegundo|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|divisorGenerico_e_Interface_fast:TICTAC_fast|flipflopGenerico:registraUmSegundo ; flipflopGenerico                 ; work         ;
 ;    |leds:writeLED|                                ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|leds:writeLED                                                                   ; leds                             ; work         ;
 ;    |registradorGenerico_WRITE:HORD|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:HORD                                                  ; registradorGenerico_WRITE        ; work         ;
 ;    |registradorGenerico_WRITE:HORU|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:HORU                                                  ; registradorGenerico_WRITE        ; work         ;
-;    |registradorGenerico_WRITE:MIND|               ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:MIND                                                  ; registradorGenerico_WRITE        ; work         ;
+;    |registradorGenerico_WRITE:MIND|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:MIND                                                  ; registradorGenerico_WRITE        ; work         ;
 ;    |registradorGenerico_WRITE:MINU|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:MINU                                                  ; registradorGenerico_WRITE        ; work         ;
 ;    |registradorGenerico_WRITE:SEGD|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGD                                                  ; registradorGenerico_WRITE        ; work         ;
-;    |registradorGenerico_WRITE:SEGU|               ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGU                                                  ; registradorGenerico_WRITE        ; work         ;
+;    |registradorGenerico_WRITE:SEGU|               ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:SEGU                                                  ; registradorGenerico_WRITE        ; work         ;
 ;    |registradorGenerico_WRITE:ledReg|             ; 3 (3)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|registradorGenerico_WRITE:ledReg                                                ; registradorGenerico_WRITE        ; work         ;
-;    |sw:swicthes|                                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|sw:swicthes                                                                     ; sw                               ; work         ;
+;    |sw:swicthes|                                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|sw:swicthes                                                                     ; sw                               ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -705,24 +705,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 8                           ;
 ;     plain             ; 2                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 448                         ;
+; arriav_lcell_comb     ; 422                         ;
 ;     arith             ; 60                          ;
 ;         1 data inputs ; 52                          ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 382                         ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 357                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 103                         ;
-;         5 data inputs ; 47                          ;
-;         6 data inputs ; 190                         ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 101                         ;
+;         5 data inputs ; 43                          ;
+;         6 data inputs ; 191                         ;
 ; boundary_port         ; 123                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.87                        ;
+; Average LUT depth     ; 4.65                        ;
 +-----------------------+-----------------------------+
 
 
@@ -731,7 +731,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -741,7 +741,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 29 22:28:48 2020
+    Info: Processing started: Fri Oct 30 00:21:57 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -845,8 +845,8 @@ Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DE
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "CPU:Processador|fluxo_de_dados:FD|bancoReg:BancoReg|registrador" is uninferred due to asynchronous read logic File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/bancoReg.vhd Line: 34
 Warning (113018): Width of data items in "initROM.mif" is greater than the memory width. Truncating data items to fit in memory. File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif Line: 5
-Warning (113028): 844 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif Line: 1
-    Warning (113027): Addresses ranging from 180 to 1023 are not initialized File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif Line: 1
+Warning (113028): 838 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif Line: 1
+    Warning (113027): Addresses ranging from 186 to 1023 are not initialized File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif Line: 1
 Critical Warning (127004): Memory depth (256) in the design file differs from memory depth (1024) in the Memory Initialization File "/home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/initROM.mif" -- truncated remaining initial content value to fit RAM
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "divisorGenerico_e_Interface:TICTAC|leituraUmSegundo[0]" to the node "CPU:Processador|fluxo_de_dados:FD|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: /home/iskandar/Documents/Insper/Des_Comp/RelogioDescomp/quartus/divisorGenerico_e_Interface.vhd Line: 10
@@ -869,14 +869,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 731 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 705 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 110 output pins
-    Info (21061): Implemented 608 logic cells
+    Info (21061): Implemented 582 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 495 megabytes
-    Info: Processing ended: Thu Oct 29 22:29:01 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Processing ended: Fri Oct 30 00:22:08 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:26
 
 
